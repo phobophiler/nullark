@@ -1,0 +1,61 @@
+{
+  "name": "nullark",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "services/*",
+    "tests/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "contracts:test": "forge test --root contracts",
+    "contracts:test:real-proof": "REAL_PROOF_INTEGRATION=1 forge test --root contracts --ffi --match-path test/ShieldedPoolRealProof.t.sol",
+    "contracts:slither": "slither contracts --exclude-dependencies --filter-paths contracts/lib,contracts/test --exclude arbitrary-send-eth,low-level-calls,assembly,pragma,solc-version --fail-none",
+    "secret-hygiene:validate": "node scripts/validate/no-secrets.mjs",
+    "public:runtime:validate": "node scripts/validate/runtime-config.mjs",
+    "public:artifacts:validate": "node scripts/validate/artifacts.mjs",
+    "public:no-secrets:validate": "node scripts/validate/no-secrets.mjs",
+    "public:verify": "npm run public:runtime:validate && npm run public:artifacts:validate && npm run public:no-secrets:validate",
+    "docs:build": "npm --workspace @nullark/docs run build",
+    "docs:dev": "npm --workspace @nullark/docs run dev",
+    "docs:check": "npm --workspace @nullark/docs run check",
+    "docs:check:redactions": "npm --workspace @nullark/docs run check:redactions",
+    "docs:check:privacy-claims": "npm --workspace @nullark/docs run check:privacy-claims",
+    "docs:check:source-sync": "npm --workspace @nullark/docs run check:source-sync",
+    "docs:check:links": "npm --workspace @nullark/docs run check:links",
+    "docs:check:seo": "npm --workspace @nullark/docs run check:seo",
+    "docs:test:browser": "npm --workspace @nullark/docs run test:browser",
+    "dev:web": "npm --workspace @nullark/web run dev",
+    "dev:local-proof-service": "node scripts/dev/local-proof-service.mjs",
+    "build:prover-artifacts": "node scripts/build/prover-artifacts.mjs",
+    "circuits:test": "cd circuits && npm test",
+    "verify:phase0": "npm test && npm run typecheck && npm run contracts:test",
+    "verify:all": "npm run public:verify && npm run verify:phase0 && npm run circuits:test"
+  },
+  "devDependencies": {
+    "@rolldown/plugin-babel": "^0.2.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5",
+    "wrangler": "^4.88.0"
+  },
+  "dependencies": {
+    "@safe-global/protocol-kit": "^7.1.0",
+    "buffer": "^6.0.3",
+    "events": "^3.3.0",
+    "poseidon-solidity": "^0.0.5",
+    "process": "^0.11.10",
+    "util": "^0.12.5",
+    "viem": "^2.48.8"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "status": "UNTRUSTED_LOCAL_TEST_ONLY",
+  "warning": "Generated from local untrusted Groth16 artifacts. Do not deploy, fund, or treat as production verifier provenance.",
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "merkleTreeDepth": 20,
+  "merkleTreeCapacity": 1048576,
+  "files": [
+    {
+      "source": "circuits/build/generated/verifiers/UNTRUSTED_DO_NOT_USE_YET/Groth16PrivateTransferVerifier.sol",
+      "output": "contracts/test/generated/UNTRUSTED_LOCAL/UntrustedLocalGroth16PrivateTransferVerifier.sol",
+      "sourceSha256": "b9737be5c6776e480d67cd32d7878dd846b6664bbfa7121c17569992cbcd4725",
+      "outputSha256": "ed3169a2826164c82141654d79ede256e3724093770a6c52b061a2f72703962c"
+    },
+    {
+      "source": "circuits/build/groth16/private_transfer/public.json",
+      "sourceSha256": "764b7c7bee2886cff5506b96d43a76c7c839b6800dccd14c329ea047d760b6f4",
+      "fixtureFunction": "privateTransferPublicInputs"
+    },
+    {
+      "source": "circuits/build/groth16/private_transfer/proof.json",
+      "sourceSha256": "6ff2e044b6f18d59c82293021715b6c30cbdca60e5c46e3e4cfdce90a1b69c73",
+      "fixtureFunction": "privateTransferProof"
+    },
+    {
+      "source": "circuits/build/generated/verifiers/UNTRUSTED_DO_NOT_USE_YET/Groth16WithdrawVerifier.sol",
+      "output": "contracts/test/generated/UNTRUSTED_LOCAL/UntrustedLocalGroth16WithdrawVerifier.sol",
+      "sourceSha256": "969e3fb55e9db423c486b5b9675ddeaa65131de9b282736d10ffff975cfc0f49",
+      "outputSha256": "5fb4fd0b363d299e8367f7062d461426d2869f0b98eb758091e9ee0dfcd0cd93"
+    },
+    {
+      "source": "circuits/build/groth16/withdraw/public.json",
+      "sourceSha256": "51986c8342ce78ff4a34c96849518128e5b383ca5f019addaf06a539560244d3",
+      "fixtureFunction": "withdrawPublicInputs"
+    },
+    {
+      "source": "circuits/build/groth16/withdraw/proof.json",
+      "sourceSha256": "c7d1451fcdc46b18f731615321fa906c425833b9ff8c80d3cd2e39215645f44d",
+      "fixtureFunction": "withdrawProof"
+    },
+    {
+      "source": "circuits/fixtures/private_transfer.valid.json",
+      "sourceSha256": "d1b03271c7676421a0d81244bde7d9fbb70f8b514b81b144fbdb16fb20410a30",
+      "fixtureFunction": "privateTransferSpentCommitment"
+    },
+    {
+      "source": "circuits/fixtures/withdraw.valid.json",
+      "sourceSha256": "98e5a3d646dea8ee9a147737564584780e12103048d1e321941ba87ce5e6b389",
+      "fixtureFunction": "withdrawSpentCommitment"
+    },
+    {
+      "source": "circuits/node_modules/circomlibjs/src/poseidon_gencontract.js",
+      "sourceSha256": "6b94409b7e6650355b1561aa4bcbfbee84a6434cd690103d5a80f96e207e5c84",
+      "fixtureFunction": "deployPoseidonT3"
+    }
+  ]
+}

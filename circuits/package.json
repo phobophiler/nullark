@@ -1,0 +1,30 @@
+{
+  "name": "circuits",
+  "version": "1.0.0",
+  "description": "Compile and witness checks for shielded balance transfer Circom circuits.",
+  "main": "index.js",
+  "scripts": {
+    "clean": "node scripts/clean-build.mjs",
+    "fixtures": "node scripts/generate-fixtures.mjs",
+    "compile:private": "mkdir -p build/private_transfer && circom private_transfer.circom --r1cs --wasm --sym --inspect -l ./node_modules/circomlib/circuits -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -o build/private_transfer",
+    "compile:withdraw": "mkdir -p build/withdraw && circom withdraw.circom --r1cs --wasm --sym --inspect -l ./node_modules/circomlib/circuits -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -o build/withdraw",
+    "compile": "npm run compile:private && npm run compile:withdraw",
+    "witness": "node scripts/witness-check.mjs",
+    "groth16": "node scripts/generate-groth16-artifacts.mjs",
+    "manifest": "node scripts/write-provenance-manifest.mjs",
+    "build:provenance": "node scripts/build-provenance.mjs",
+    "test": "npm run build:provenance"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "overrides": {
+    "underscore": "1.13.8"
+  },
+  "devDependencies": {
+    "@zk-kit/binary-merkle-root.circom": "2.0.0",
+    "circomlib": "2.0.5",
+    "circomlibjs": "0.1.7",
+    "snarkjs": "0.7.5"
+  }
+}

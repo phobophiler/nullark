@@ -1,0 +1,27 @@
+{
+  "name": "@nullark/sdk",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./runtime/current.json": "./runtime/current.json",
+    "./runtime/testnet.json": "./runtime/testnet.json"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "circomlibjs": "^0.1.7",
+    "viem": "^2.48.8"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.5"
+  }
+}

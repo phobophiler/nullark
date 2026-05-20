@@ -1,0 +1,71 @@
+{
+  "schema": "nullark-public-runtime-current-v1",
+  "productVersion": "nullark-v1.1-mainnet",
+  "trustedSetupRecordUrl": "https://nullark.com/proving/trusted-setup-record.json",
+  "trustedSetupStatus": "approved-for-mainnet",
+  "currentV1_1Approval": true,
+  "network": "megaeth-mainnet",
+  "chainId": 4326,
+  "mainnet4326Blocked": false,
+  "rpcUrl": "https://mainnet.megaeth.com/rpc",
+  "pool": "0xFa49572C8bdd03C3DB4caA6bafD73a4BA92F5F15",
+  "poolContractName": "NullarkPool",
+  "poolDeploymentBlock": "0xf98a11",
+  "privateTransferVerifier": "0x0C78dE1615892205908810bF0129f10165346B57",
+  "withdrawVerifier": "0x9023FAfB13320D4A34AAD6C25E0411862b0E3397",
+  "verifierAdapter": "0x311d92DAc355F239B039C4298A7f374E09E23e52",
+  "poseidon2": "0x9146549928FEABd8c63Ee04371672D958deAc563",
+  "feeController": "0x3de86495E180c418e9189Af7Fba51BB20C49Ba00",
+  "withdrawVerifierBytecodeHash": "0x9a20d11112ee8b3c57677de4ba84eccf3928cb8aec734a21a1df5770086ad4f6",
+  "withdrawSelector": "0x678d8506",
+  "merkleTreeDepth": 20,
+  "withdrawalFeeBps": 33,
+  "relayerEndpoint": "https://relayer.nullark.com/transaction",
+  "relayerEndpointLabel": "Machine/API endpoint",
+  "productionRelayerApproved": true,
+  "approvedWithdrawalRelayer": "0x4246e9271D82eFDfEE1566A98dF2858B52f88d77",
+  "signer": "0x8A27533b403C24a419791431Bc82B450830D410E",
+  "liveSmokeEvidenceApproved": true,
+  "mainnetValueMovingApproved": true,
+  "automatedValueMovementApprovedByThisRecord": false,
+  "mainnetValueMovingApprovalSha256": "29cc2aa2ae50a74a5b60a897849a947a5060fef378b2474eb0b063d99eb8ef6e",
+  "privacyClaimsApproved": false,
+  "guardedUsersApproved": false,
+  "remainingBlockers": [],
+  "remainingLimitations": [
+    "Production privacy claims remain blocked unless a later public privacy-claims artifact is published and wired into runtime."
+  ],
+  "explicitNonAuthorizations": [
+    "Does not authorize new deployments, funding, or additional value-moving transactions beyond the recorded May 19 smoke transactions.",
+    "Does not set or rotate Cloudflare secrets.",
+    "Does not approve guarded-user cohorts, invites, or support SLA claims.",
+    "Does not approve production privacy claims.",
+    "Does not broaden the approved relayer selector, pool, verifier, or endpoint."
+  ],
+  "artifacts": {
+    "proverManifestSha256": "c525b49314f6c50fa7937238fc2cd9dbf3f1de90a5e33736bf6fdcd5dbfb54bc",
+    "trustedSetupRecordSha256": "d82eab8a759488089ea4c960d451e36356e42f42ee5e05385bb1fa7a2c6c407e",
+    "withdrawWasmSha256": "10da6305ea99967b6945f968b2df93c839f5a8d78221baff800250474b207dc2",
+    "withdrawFinalZkeySha256": "86a9f5c3b4833dd38b9bdd21fa5412593572223961568d3ff2862116c6ca2a96"
+  },
+  "paths": {
+    "browserProverManifest": "apps/web/public/proving/withdraw-artifacts.manifest.json",
+    "trustedSetupRecord": "apps/web/public/proving/trusted-setup-record.json",
+    "withdrawWasm": "apps/web/public/proving/withdraw.wasm",
+    "withdrawFinalZkey": "apps/web/public/proving/withdraw_final.zkey"
+  },
+  "groth16PublicInputOrder": [
+    "root",
+    "nullifier",
+    "newCommitment",
+    "destination",
+    "grossAmount",
+    "fee",
+    "chainId",
+    "verifyingContract",
+    "spentCommitment",
+    "noteAmount",
+    "proofContextHash",
+    "encryptedNoteHash"
+  ]
+}
