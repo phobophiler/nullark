@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "circomlibjs": "^0.1.7",
-    "viem": "^2.48.8"
+    "viem": "^2.50.4"
   },
   "devDependencies": {
     "vitest": "^4.1.5"
