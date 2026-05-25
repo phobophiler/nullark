@@ -1,0 +1,14 @@
+{
+  "name": "@nullark/relayer-worker",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "viem": "^2.50.4"
+  },
+  "devDependencies": {}
+}

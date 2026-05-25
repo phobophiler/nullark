@@ -1,0 +1,84 @@
+{
+  "schema": "nullark-sdk-runtime-v1-2-candidate-v1",
+  "productVersion": "nullark-v1.2-fee-governance",
+  "environment": "megaeth-mainnet",
+  "chainId": 4326,
+  "rpcUrl": "https://mainnet.megaeth.com/rpc",
+  "poolContractName": "NullarkPool",
+  "pool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+  "poolDeploymentBlock": "0x10152dd",
+  "merkleTreeDepth": 20,
+  "withdrawalFeeBps": 33,
+  "maxWithdrawalFeeBps": 100,
+  "feeController": "0x951b8ABC24528Fb2512f813504fbA0bC88638911",
+  "feePolicy": {
+    "activeFeeBps": 33,
+    "maxFeeBps": 100,
+    "pendingFeeState": {
+      "pendingFeeBps": null,
+      "pendingFeeActivationTime": null,
+      "source": "on-chain-feeBps"
+    }
+  },
+  "v1_2Readiness": {
+    "approvedForMainnet": true,
+    "ownerApprovedPromotion": true,
+    "promotionEvidence": [
+      {
+        "path": "apps/web/public/proving/trusted-setup-record.json",
+        "sha256": "e9a7f78a293cc7c48888356f4e05edea756408adfcaed626d77faa98dfc7ff58",
+        "status": "approved-for-mainnet"
+      },
+      {
+        "path": "public-artifacts/current.json",
+        "sha256": "ec12da21c3c0ecb59cfe4b3e1d9557c5d32e0e39fe69b80417fb21db3b99a98d",
+        "status": "approved-for-mainnet"
+      }
+    ]
+  },
+  "relayerEndpoint": "https://relayer.nullark.com/transaction",
+  "relayerEndpointLabel": "Machine/API endpoint",
+  "approvedWithdrawalRelayer": "0x8684bCb6D1deCb9b89733E7120625947615Cc14F",
+  "depositVerifier": "0x1c62f992d1B2499f0E4CE3DecD4c0833d3B7C691",
+  "privateTransferVerifier": "0xd61c14635A7951E6E330a75814304656Db7e9ee9",
+  "withdrawVerifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+  "verifierAdapter": "0xc63269E567f4984Cd5d5ED4D27117c589732b186",
+  "poseidon2": "0x962dB28fe5Ae5737FdE62F438309cFFDefE8C182",
+  "withdrawVerifierBytecodeHash": "0x613190065f23e69c6dcd8d75796b8aa20c060a5f51b312cf82c11424443bfdca",
+  "withdrawSelector": "0x678d8506",
+  "artifactTrustMode": "mainnet-trusted-setup",
+  "proverManifest": {
+    "path": "/proving/withdraw-artifacts.manifest.json",
+    "sha256": "cd11b19144f24f1bc9065f178b20f596e4ecba2e58a2624d7615aedbe12015d7"
+  },
+  "trustedSetupRecord": {
+    "path": "/proving/trusted-setup-record.json",
+    "sha256": "e9a7f78a293cc7c48888356f4e05edea756408adfcaed626d77faa98dfc7ff58"
+  },
+  "artifacts": {
+    "withdrawWasm": {
+      "path": "/proving/withdraw.wasm",
+      "sha256": "b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143"
+    },
+    "withdrawFinalZkey": {
+      "path": "/proving/withdraw_final.zkey",
+      "sha256": "804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25"
+    }
+  },
+  "artifactResolution": {
+    "mode": "https-base-url",
+    "baseUrl": "https://nullark.com"
+  },
+  "groth16PublicInputOrder": [
+    "root",
+    "nullifier",
+    "outputCommitment",
+    "destination",
+    "grossAmount",
+    "fee",
+    "chainId",
+    "verifyingContract",
+    "proofContextHash",
+    "encryptedOutputNoteHash"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "browser-withdraw-prover-artifacts-v1",
+  "generatedAt": "2026-05-25T00:00:00.000Z",
+  "trustLevel": "trusted-setup-recorded",
+  "warning": "Public trusted setup record is hash-bound to these v1.2 browser prover artifacts for MegaETH mainnet.",
+  "trustedSetupRecord": {
+    "path": "/proving/trusted-setup-record.json",
+    "sha256": "e9a7f78a293cc7c48888356f4e05edea756408adfcaed626d77faa98dfc7ff58",
+    "chainId": 4326,
+    "pool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+    "verifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+    "verifierBytecodeHash": "0x613190065f23e69c6dcd8d75796b8aa20c060a5f51b312cf82c11424443bfdca",
+    "approvedBy": "0xB21EA9063029b32124EA79c532C7099970045432",
+    "approvedAt": "2026-05-25T00:00:00Z"
+  },
+  "artifacts": {
+    "withdrawWasm": {
+      "path": "/proving/withdraw.wasm",
+      "source": "public-artifacts/proving/v1.2/withdraw.wasm",
+      "sha256": "b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143"
+    },
+    "withdrawFinalZkey": {
+      "path": "/proving/withdraw_final.zkey",
+      "source": "public-artifacts/proving/v1.2/withdraw.zkey",
+      "sha256": "804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25"
+    }
+  },
+  "pool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+  "verifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+  "verifierBytecodeHash": "0x613190065f23e69c6dcd8d75796b8aa20c060a5f51b312cf82c11424443bfdca",
+  "publicInputSchema": "v1.2-unlinkable"
+}

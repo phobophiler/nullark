@@ -1,0 +1,32 @@
+{
+  "schema": "browser-withdraw-prover-artifacts-v1",
+  "generatedAt": "2026-05-25T03:45:00.000+07:00",
+  "trustLevel": "testnet-local-dev-untrusted",
+  "warning": "Local testnet-only v1.2 rehearsal prover artifacts. Not mainnet trusted setup evidence.",
+  "trustedSetupRecord": {
+    "path": "/proving/trusted-setup-record.json",
+    "sha256": "7cf2ba6c7d482179a5a246ad4fa0ab7c4bbebb6a48108d0fe0963b8a364c825e",
+    "chainId": 6343,
+    "pool": "0xEc61D863700DeF260E7BABA634FAa24AEC81f29e",
+    "verifier": "0x9710F0853688c0ef58e826Cd1Bb0024b3D29bC72",
+    "verifierBytecodeHash": "0x4927cf479baf49196aa232f61fd697e41ef4a379064f298c3805964a61cf59fb",
+    "approvedBy": "0x2f2018d7F05D7B5baeaA529466c874577aD9D48c",
+    "approvedAt": "2026-05-19T00:00:00Z"
+  },
+  "artifacts": {
+    "withdrawWasm": {
+      "path": "/proving/v1-2-testnet/withdraw.wasm",
+      "source": "circuits/build/withdraw_v1_2/withdraw_v1_2_js/withdraw_v1_2.wasm",
+      "sha256": "b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143"
+    },
+    "withdrawFinalZkey": {
+      "path": "/proving/v1-2-testnet/withdraw_final.zkey",
+      "source": "circuits/build/groth16/withdraw_v1_2/withdraw_v1_2_final.zkey",
+      "sha256": "804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25"
+    }
+  },
+  "pool": "0xEc61D863700DeF260E7BABA634FAa24AEC81f29e",
+  "verifier": "0x9710F0853688c0ef58e826Cd1Bb0024b3D29bC72",
+  "verifierBytecodeHash": "0x4927cf479baf49196aa232f61fd697e41ef4a379064f298c3805964a61cf59fb",
+  "publicInputSchema": "v1.2-unlinkable"
+}

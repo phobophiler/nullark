@@ -1,0 +1,143 @@
+{
+  "recordVersion": 1,
+  "status": "draft",
+  "trustedSetupSource": "project-specific-ceremony",
+  "chainId": 6343,
+  "mainnet4326Blocked": true,
+  "deploymentApproved": false,
+  "signingApproved": false,
+  "broadcastApproved": false,
+  "privateKeysIncluded": false,
+  "realFundsApproved": false,
+  "guardedUsersBlocked": true,
+  "productionPrivacyClaimsBlocked": true,
+  "productionRelayerOperationApproved": false,
+  "trustedSetupProvenanceRef": "replace-me",
+  "ptauSource": "replace-me",
+  "powersOfTauHash": "replace-me",
+  "ceremonyTranscriptHashes": [
+    "replace-me"
+  ],
+  "contributionHashes": [
+    "replace-me"
+  ],
+  "circuits": [
+    {
+      "name": "private_transfer",
+      "generatedVerifierContractName": "Groth16PrivateTransferVerifier",
+      "sourcePath": "circuits/private_transfer.circom",
+      "sourceHash": "replace-me",
+      "dependencyHashes": [
+        "replace-me"
+      ],
+      "r1csHash": "replace-me",
+      "wasmHash": "replace-me",
+      "symHash": "replace-me",
+      "zkeyHash": "replace-me",
+      "vkeyHash": "replace-me",
+      "provingKeyHash": "replace-me",
+      "verificationKeyHash": "replace-me",
+      "generatedSolidityVerifierHash": "replace-me",
+      "generatedVerifierPath": "contracts/src/verifiers/generated/phase1/private_transfer.sol",
+      "publicInputOrder": [
+        "root",
+        "nullifier",
+        "newCommitment",
+        "destination",
+        "grossAmount",
+        "fee",
+        "chainId",
+        "verifyingContract",
+        "spentCommitment",
+        "noteAmount"
+      ]
+    },
+    {
+      "name": "withdraw",
+      "generatedVerifierContractName": "Groth16WithdrawVerifier",
+      "sourcePath": "circuits/withdraw.circom",
+      "sourceHash": "replace-me",
+      "dependencyHashes": [
+        "replace-me"
+      ],
+      "r1csHash": "replace-me",
+      "wasmHash": "replace-me",
+      "symHash": "replace-me",
+      "zkeyHash": "replace-me",
+      "vkeyHash": "replace-me",
+      "provingKeyHash": "replace-me",
+      "verificationKeyHash": "replace-me",
+      "generatedSolidityVerifierHash": "replace-me",
+      "generatedVerifierPath": "contracts/src/verifiers/generated/phase1/withdraw.sol",
+      "publicInputOrder": [
+        "root",
+        "nullifier",
+        "newCommitment",
+        "destination",
+        "grossAmount",
+        "fee",
+        "chainId",
+        "verifyingContract",
+        "spentCommitment",
+        "noteAmount"
+      ]
+    }
+  ],
+  "adapterSourcePath": "contracts/src/verifiers/ActionRoutingGroth16Verifier.sol",
+  "adapterSourceHash": "replace-me",
+  "adapterExpectedPublicInputOrder": [
+    "root",
+    "nullifier",
+    "newCommitment",
+    "destination",
+    "grossAmount",
+    "fee",
+    "chainId",
+    "verifyingContract",
+    "spentCommitment",
+    "noteAmount"
+  ],
+  "adapterRouting": {
+    "privateTransferCircuit": "private_transfer",
+    "withdrawCircuit": "withdraw"
+  },
+  "reproducibleBuildCommand": "replace-me",
+  "commandLogHash": "replace-me",
+  "toolchainVersions": [
+    "node replace-me",
+    "circom replace-me",
+    "snarkjs replace-me"
+  ],
+  "reviewPacketPath": "docs/evidence/security-review/verifier-promotion-packet.md",
+  "circuitReview": {
+    "status": "pending",
+    "reference": "docs/evidence/security-review/circuit-review.md",
+    "reviewer": "replace-me",
+    "openHighOrCriticalFindings": 0
+  },
+  "contractReview": {
+    "status": "pending",
+    "reference": "docs/evidence/security-review/contract-review.md",
+    "reviewer": "replace-me",
+    "openHighOrCriticalFindings": 0
+  },
+  "trustedSetupReview": {
+    "status": "pending",
+    "reference": "docs/evidence/security-review/trusted-setup-review.md",
+    "reviewer": "replace-me",
+    "openHighOrCriticalFindings": 0
+  },
+  "issueDisposition": {
+    "status": "pending",
+    "reference": "docs/evidence/security-review/issue-disposition.md",
+    "reviewer": "replace-me",
+    "openHighOrCriticalFindings": 0
+  },
+  "blockedUntil": [
+    "trusted-setup-provenance-filled",
+    "real-artifact-hashes-filled",
+    "external-security-review-complete",
+    "owner-approval-recorded",
+    "deployed-megaeth-testnet-verifiers-recorded"
+  ]
+}

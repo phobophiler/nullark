@@ -1,0 +1,103 @@
+{
+  "schema": "trusted-setup-verifier-promotion-v1",
+  "trustLevel": "trusted-setup-recorded",
+  "status": "approved-for-mainnet",
+  "currentV1_1Approval": false,
+  "mainnet4326Blocked": false,
+  "chainId": 4326,
+  "scope": "nullark-v1.2-mainnet-withdraw-browser-prover",
+  "approverLabel": "nullark",
+  "approvedBy": "0xB21EA9063029b32124EA79c532C7099970045432",
+  "approvedAt": "2026-05-25T00:00:00Z",
+  "trustedSetupSource": "hash-bound-nullark-v1.2-mainnet-record",
+  "ceremonyModel": "project-controlled-hash-bound-record",
+  "thirdPartyCeremony": false,
+  "approvedArtifactBundle": {
+    "root": "public-artifacts/proving/v1.2",
+    "immutability": "repo-local approved v1.2 artifact bundle; readiness must not depend on mutable circuits/build outputs",
+    "mutableBuildTreeExcluded": true
+  },
+  "targetChain": {
+    "name": "MegaETH mainnet",
+    "chainId": 4326,
+    "rpcUrl": "https://mainnet.megaeth.com/rpc"
+  },
+  "pool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+  "verifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+  "verifierBytecodeHash": "0x613190065f23e69c6dcd8d75796b8aa20c060a5f51b312cf82c11424443bfdca",
+  "predictedContracts": {
+    "depositVerifier": "0x1c62f992d1B2499f0E4CE3DecD4c0833d3B7C691",
+    "privateTransferVerifier": "0xd61c14635A7951E6E330a75814304656Db7e9ee9",
+    "withdrawVerifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+    "verifierAdapter": "0xc63269E567f4984Cd5d5ED4D27117c589732b186",
+    "poseidon2": "0x962dB28fe5Ae5737FdE62F438309cFFDefE8C182",
+    "nullarkPool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+    "feeController": "0x951b8ABC24528Fb2512f813504fbA0bC88638911"
+  },
+  "publicRuntime": {
+    "pool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+    "poolDeploymentBlock": "0x10152dd",
+    "withdrawVerifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+    "verifierAdapter": "0xc63269E567f4984Cd5d5ED4D27117c589732b186",
+    "currentRef": "public-artifacts/current.json"
+  },
+  "publicInputOrder": [
+    "root",
+    "nullifier",
+    "outputCommitment",
+    "destination",
+    "grossAmount",
+    "fee",
+    "chainId",
+    "verifyingContract",
+    "proofContextHash",
+    "encryptedOutputNoteHash"
+  ],
+  "publicInputOrderSha256": "98ae722255351a03402cd3ad1cdf9a65d5ca270f5c11b7ad48322ff0fc77f110",
+  "publicInputOrderChangeAcknowledged": true,
+  "wasmSha256": "b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143",
+  "zkeySha256": "804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25",
+  "artifacts": {
+    "withdraw": {
+      "sourcePath": "circuits/withdraw_v1_2.circom",
+      "sourceHash": "sha256:7986ef979b408a69f73ec63fea89aa3fc1c7432421917de1cc1c47d532acbf54",
+      "r1csArtifactRef": "public-artifacts/proving/v1.2/withdraw.r1cs",
+      "r1csHash": "sha256:27744a8449d73882dd43f2b496c0982a9ac548a3599e23dba306175aaa36c71d",
+      "wasmArtifactRef": "public-artifacts/proving/v1.2/withdraw.wasm",
+      "wasmHash": "sha256:b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143",
+      "zkeyArtifactRef": "public-artifacts/proving/v1.2/withdraw.zkey",
+      "zkeyHash": "sha256:804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25",
+      "verificationKeyArtifactRef": "public-artifacts/proving/v1.2/withdraw.vkey.json",
+      "verificationKeyHash": "sha256:77b6ceb285f898c8f8d13212599c4b1f67e42480d7ef5e2ccd3cf8b850f21828",
+      "generatedSolidityVerifierPath": "contracts/src/verifiers/generated/mainnet/Groth16WithdrawVerifier.sol",
+      "generatedSolidityVerifierHash": "sha256:1c2204568fc1c485d12b3b7704c9c3f3412aae74fc3895f738ac020b9263deb0",
+      "deployedBytecodeHash": "0x613190065f23e69c6dcd8d75796b8aa20c060a5f51b312cf82c11424443bfdca",
+      "deployedBytecodeSha256": "sha256:dd3e6348ff07ba3ff6a489707b93667a06fb0f0551dec83510496beaa0cb381c"
+    }
+  },
+  "mainnetOperatorDecisions": {
+    "scope": "megaeth-mainnet-4326-public-runtime",
+    "productionRelayerApproved": true,
+    "approvedWithdrawalRelayer": "0x8684bCb6D1deCb9b89733E7120625947615Cc14F",
+    "signer": "0x8A27533b403C24a419791431Bc82B450830D410E",
+    "deployFlow": "v1.2-current-public-runtime-bound",
+    "automatedValueMovementApprovedByThisRecord": true,
+    "mainnetValueMovingApproved": true,
+    "guardedUsersApproved": true,
+    "productionPrivacyClaimsApproved": false
+  },
+  "acceptedRisks": [
+    "This is a project-controlled hash-bound trusted setup record, not a third-party ceremony record.",
+    "This record binds browser prover artifacts to the v1.2 NullarkPool and withdraw verifier on MegaETH mainnet."
+  ],
+  "remainingBlockers": [],
+  "remainingLimitations": [
+    "Production privacy claims remain blocked unless a later public privacy-claims artifact is published and wired into runtime."
+  ],
+  "explicitNonAuthorizations": [
+    "Does not authorize production privacy claims.",
+    "Does not set or rotate Cloudflare secrets.",
+    "Does not broaden the approved pool, verifier, selector, endpoint, or relayer beyond the current v1.2 runtime binding."
+  ],
+  "hashBoundToFinalArtifacts": true
+}

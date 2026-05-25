@@ -1,0 +1,64 @@
+{
+  "schema": "nullark-sdk-runtime-v1-2-candidate-v1",
+  "productVersion": "nullark-v1.2-testnet-rehearsal",
+  "environment": "megaeth-testnet-nullark",
+  "chainId": 6343,
+  "rpcUrl": "https://carrot.megaeth.com/rpc",
+  "poolContractName": "NullarkPool",
+  "pool": "0xEc61D863700DeF260E7BABA634FAa24AEC81f29e",
+  "poolDeploymentBlock": "0x1305540",
+  "merkleTreeDepth": 20,
+  "withdrawalFeeBps": 33,
+  "relayerEndpoint": "https://testnet-relayer.nullark.com/transaction",
+  "relayerEndpointLabel": "Testnet relayer endpoint",
+  "maxWithdrawalFeeBps": 100,
+  "feePolicy": {
+    "activeFeeBps": 33,
+    "maxFeeBps": 100,
+  "pendingFeeState": {
+      "pendingFeeBps": null,
+      "pendingFeeActivationTime": null,
+      "source": "on-chain-feeBps"
+    }
+  },
+  "privateTransferVerifier": "0x1b2C53Df63D67b1562ac578C8E0d468B89575794",
+  "withdrawVerifier": "0x9710F0853688c0ef58e826Cd1Bb0024b3D29bC72",
+  "verifierAdapter": "0xb95A581f672779eC61DCa838aA452C46E4c9EB40",
+  "withdrawVerifierBytecodeHash": "0x4927cf479baf49196aa232f61fd697e41ef4a379064f298c3805964a61cf59fb",
+  "withdrawSelector": "0x678d8506",
+  "artifactTrustMode": "testnet-local-dev-untrusted",
+  "proverManifest": {
+    "path": "/proving/v1-2-testnet/withdraw-artifacts.manifest.json",
+    "sha256": "234deb30ce3d33e13c0bf4417e9875600aa1ffd97eae66dc6046ae8ebb8095e9"
+  },
+  "trustedSetupRecord": {
+    "path": "/proving/trusted-setup-record.json",
+    "sha256": "7cf2ba6c7d482179a5a246ad4fa0ab7c4bbebb6a48108d0fe0963b8a364c825e"
+  },
+  "artifacts": {
+    "withdrawWasm": {
+      "path": "/proving/v1-2-testnet/withdraw.wasm",
+      "sha256": "b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143"
+    },
+    "withdrawFinalZkey": {
+      "path": "/proving/v1-2-testnet/withdraw_final.zkey",
+      "sha256": "804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25"
+    }
+  },
+  "artifactResolution": {
+    "mode": "local-artifact-dir",
+    "artifactDir": "./proving"
+  },
+  "groth16PublicInputOrder": [
+    "root",
+    "nullifier",
+    "outputCommitment",
+    "destination",
+    "grossAmount",
+    "fee",
+    "chainId",
+    "verifyingContract",
+    "proofContextHash",
+    "encryptedOutputNoteHash"
+  ]
+}

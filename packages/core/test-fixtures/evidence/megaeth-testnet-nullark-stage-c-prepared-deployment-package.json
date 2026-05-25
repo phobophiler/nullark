@@ -1,0 +1,158 @@
+{
+  "recordVersion": 2,
+  "status": "live-stage-c-nullark-testnet-package",
+  "scope": "sandbox-only-local-untrusted",
+  "packageMode": "live-testnet-deployment",
+  "stage": "stage-c-v1-1",
+  "chainId": 6343,
+  "rpcUrl": "https://carrot.megaeth.com/rpc",
+  "environment": "megaeth-testnet",
+  "mainnet4326Blocked": true,
+  "guardedUsersBlocked": true,
+  "realFundsApproved": false,
+  "productionPrivacyClaimsBlocked": true,
+  "deploymentApproved": true,
+  "signingApproved": true,
+  "rpcBroadcastApproved": true,
+  "trustedSetupSource": "local-untrusted-development",
+  "localUntrustedArtifactsAcceptedForSandboxOnly": true,
+  "cannotSatisfyVerifierPromotion": true,
+  "cannotSatisfyProductionDeployment": true,
+  "promotionBlockedReason": "Verifier promotion remains blocked because local untrusted setup artifacts cannot be promoted.",
+  "trustedSetupReadyBlockedReason": "Trusted setup ready validation remains blocked by provenance, hash, and public-input-order review blockers.",
+  "readinessClassification": {
+    "artifactPromotionStatus": "draft-review-ready-only",
+    "testnetReadinessStatus": "live-testnet-deployed-with-replacement2-smoke",
+    "mainnetReadinessStatus": "blocked",
+    "testnetDeploymentApproved": true,
+    "testnetSmokeApproved": true,
+    "testnetSmokeArtifact": "docs/evidence/live-repeated-withdrawal-smoke-v1-1-2026-05-13-replacement2.json",
+    "promotionApproved": false,
+    "checklistRef": "docs/evidence/stage-c-testnet-artifact-promotion-readiness.md",
+    "hardBlockers": [
+      "local untrusted setup artifacts cannot be promoted",
+      "mainnet 4326 remains blocked"
+    ]
+  },
+  "currentVerificationInputs": {
+    "focusedCoreTestsPassed": true,
+    "coreTypecheckPassed": true,
+    "circuitNpmTestPassed": true,
+    "liveReplacement2SmokePresent": true,
+    "liveReplacement2SmokeArtifact": "docs/evidence/live-repeated-withdrawal-smoke-v1-1-2026-05-13-replacement2.json",
+    "verifierPromotionBlocked": "local untrusted setup artifacts cannot be promoted",
+    "trustedSetupReadyBlocked": "provenance/hash/order blockers remain unresolved"
+  },
+  "contractCandidate": {
+    "contractName": "NullarkPool",
+    "sourcePath": "contracts/src/NullarkPool.sol",
+    "supportsStageC": true,
+    "fixedDenominationNativeEthOnly": true,
+    "fixedArityWithdrawChangeOnly": true,
+    "noErc20": true,
+    "noSubsetRoots": true,
+    "noProxyUpgradeability": true,
+    "noBackendCustody": true
+  },
+  "scripts": {
+    "dryRun": "ALLOW_LOCAL_UNTRUSTED_TESTNET_DEPLOYMENT=true MEGAETH_DEPLOYER_ADDRESS=$MEGAETH_DEPLOYER_ADDRESS MEGAETH_FEE_CONTROLLER=$MEGAETH_FEE_CONTROLLER MEGAETH_EMERGENCY_GUARDIAN=$MEGAETH_EMERGENCY_GUARDIAN forge script contracts/script/DeployMegaEthTestnetNullarkPool.s.sol:DeployMegaEthTestnetNullarkPool --root contracts --rpc-url https://carrot.megaeth.com/rpc --sender $MEGAETH_DEPLOYER_ADDRESS",
+    "broadcast": "ALLOW_LOCAL_UNTRUSTED_TESTNET_DEPLOYMENT=true forge script contracts/script/DeployMegaEthTestnetNullarkPool.s.sol:DeployMegaEthTestnetNullarkPool --root contracts --rpc-url https://carrot.megaeth.com/rpc --sender $MEGAETH_DEPLOYER_ADDRESS --keystore $MEGAETH_KEYSTORE_PATH --password-file $MEGAETH_KEYSTORE_PASSWORD_FILE --broadcast --slow --non-interactive",
+    "readOnlyVerify": "forge script contracts/script/VerifyMegaEthTestnetNullarkPool.s.sol:VerifyMegaEthTestnetNullarkPool --root contracts --rpc-url https://carrot.megaeth.com/rpc"
+  },
+  "constructorRoles": {
+    "deployerEnv": "MEGAETH_DEPLOYER_ADDRESS",
+    "feeControllerEnv": "MEGAETH_FEE_CONTROLLER",
+    "emergencyGuardianEnv": "MEGAETH_EMERGENCY_GUARDIAN",
+    "sharedRolesRequireAcknowledgementEnv": "MEGAETH_ALLOW_SHARED_SANDBOX_ROLES",
+    "privateKeysInRecord": false,
+    "rawPrivateKeyStoredInEvidence": false
+  },
+  "localArtifactRefs": {
+    "localUntrustedArtifactRecordPath": "docs/evidence/local-untrusted-sandbox-artifacts.json",
+    "provenanceManifestPath": "circuits/build/provenance/manifest.json",
+    "generatedPrivateTransferVerifierPath": "circuits/build/generated/verifiers/UNTRUSTED_DO_NOT_USE_YET/Groth16PrivateTransferVerifier.sol",
+    "generatedWithdrawVerifierPath": "circuits/build/generated/verifiers/UNTRUSTED_DO_NOT_USE_YET/Groth16WithdrawVerifier.sol",
+    "artifactStatus": "UNTRUSTED_LOCAL_DEVELOPMENT_ONLY",
+    "productionUsable": false
+  },
+  "deployedAddresses": {
+    "privateTransferVerifier": "0x2222222222222222222222222222222222222222",
+    "withdrawVerifier": "0x3333333333333333333333333333333333333333",
+    "verifierAdapter": "0x4444444444444444444444444444444444444444",
+    "poseidon2": "0x5555555555555555555555555555555555555555",
+    "nullarkPool": "0x6666666666666666666666666666666666666666",
+    "shieldedPool": "0x6666666666666666666666666666666666666666"
+  },
+  "deploymentTransactions": [
+    {
+      "contractName": "UntrustedLocalGroth16PrivateTransferVerifier",
+      "contractAddress": "0x2222222222222222222222222222222222222222",
+      "transactionHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+      "status": "0x1",
+      "blockNumber": "0x7d0",
+      "gasUsed": "0x1000"
+    },
+    {
+      "contractName": "UntrustedLocalGroth16WithdrawVerifier",
+      "contractAddress": "0x3333333333333333333333333333333333333333",
+      "transactionHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
+      "status": "0x1",
+      "blockNumber": "0x7d1",
+      "gasUsed": "0x1000"
+    },
+    {
+      "contractName": "ActionRoutingGroth16Verifier",
+      "contractAddress": "0x4444444444444444444444444444444444444444",
+      "transactionHash": "0x3333333333333333333333333333333333333333333333333333333333333333",
+      "status": "0x1",
+      "blockNumber": "0x7d2",
+      "gasUsed": "0x1000"
+    },
+    {
+      "contractName": "PoseidonT3",
+      "contractAddress": "0x5555555555555555555555555555555555555555",
+      "transactionHash": "0x4444444444444444444444444444444444444444444444444444444444444444",
+      "status": "0x1",
+      "blockNumber": "0x7d3",
+      "gasUsed": "0x1000"
+    },
+    {
+      "contractName": "NullarkPool",
+      "contractAddress": "0x6666666666666666666666666666666666666666",
+      "transactionHash": "0x5555555555555555555555555555555555555555555555555555555555555555",
+      "status": "0x1",
+      "blockNumber": "0x7d4",
+      "gasUsed": "0x1000"
+    }
+  ],
+  "readOnlyVerification": {
+    "verifiedAt": "2026-05-13T00:29:43Z",
+    "command": "MEGAETH_PRIVATE_TRANSFER_VERIFIER=0x2222222222222222222222222222222222222222 MEGAETH_WITHDRAW_VERIFIER=0x3333333333333333333333333333333333333333 MEGAETH_VERIFIER_ADAPTER=0x4444444444444444444444444444444444444444 MEGAETH_POSEIDON2=0x5555555555555555555555555555555555555555 MEGAETH_NULLARK_POOL=0x6666666666666666666666666666666666666666 forge script contracts/script/VerifyMegaEthTestnetNullarkPool.s.sol:VerifyMegaEthTestnetNullarkPool --root contracts --rpc-url https://carrot.megaeth.com/rpc --chain-id 6343",
+    "result": "passed",
+    "MERKLE_TREE_DEPTH": 20,
+    "MERKLE_TREE_CAPACITY": 1048576,
+    "initialRoot": "0x7777777777777777777777777777777777777777777777777777777777777777",
+    "liveCastChecks": {
+      "MERKLE_TREE_DEPTH": 20,
+      "MERKLE_TREE_CAPACITY": 1048576,
+      "codePresent": true
+    }
+  },
+  "verifierCompatibility": {
+    "checkedAt": "2026-05-13T00:29:43Z",
+    "command": "MEGAETH_WITHDRAW_VERIFIER=0x3333333333333333333333333333333333333333 MEGAETH_VERIFIER_ADAPTER=0x4444444444444444444444444444444444444444 rtk node scripts/diagnose-withdraw-verifier-compatibility.mjs",
+    "result": "passed",
+    "localSnarkjsVerifyStatus": 0,
+    "proofPackingMatchesSolidityCalldata": true,
+    "publicInputsMatchSolidityCalldata": true,
+    "mutatedPublicInput10Rejected": true,
+    "withdrawVerifierMatchesCompiledDeploymentArtifact": true,
+    "deployedVerifierAbiSignalType": "uint256[12]",
+    "deployedVerifierExposesExpected12SignalSelector": true,
+    "withdrawVerifyReturned": true,
+    "adapterVerifyReturned": true,
+    "adapterVerifyMutatedPublicInput10Returned": false
+  },
+  "initialTestTransaction": null,
+  "notes": "Live Stage C NullarkPool MegaETH testnet package lane only. This records sandbox-only local-untrusted deployment receipts and read-only verification on chain 6343. It does not approve guarded users, real funds, production privacy claims, verifier promotion, or mainnet use."
+}

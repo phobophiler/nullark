@@ -1,0 +1,10 @@
+name = "shielded-private-transfer"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-05-06"
+
+[vars]
+VITE_SHIELDED_TRANSFERS_ENVIRONMENT = "megaeth-mainnet"
+VITE_MEGAETH_CHAIN_ID = "4326"
+VITE_MEGAETH_RPC_URL = "https://mainnet.megaeth.com/rpc"
+VITE_RELAYER_ENDPOINT = "replace-with-cloudflare-worker-relay-transaction-url"
+VITE_PROVER_MANIFEST_URL = "replace-with-trusted-prover-manifest-url"
