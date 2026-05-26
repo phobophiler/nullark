@@ -1,0 +1,33 @@
+---
+title: "Deposit"
+description: "A user-facing checklist for fixed-denomination deposits without exposing note material."
+---
+
+A deposit creates a public pool interaction and private note material. The deposit itself is public.
+
+<Warning>
+  Do not deposit from an address or timing pattern that you are unwilling to have publicly associated with this pool interaction.
+</Warning>
+
+## Before depositing
+
+Check:
+
+- the app origin is the expected Nullark origin
+- the wallet is connected to MegaETH mainnet chain ID `4326`
+- the pool address matches `public-artifacts/current.json`
+- the denomination and fee expectations are clear
+- you understand that the deposit transaction is public
+- you have a private place to keep recovery material
+
+## During deposit
+
+The app creates note material locally and submits a pool deposit. Do not copy note material into chat, screenshots, issue trackers, support channels, or docs.
+
+## After deposit
+
+Keep the note and recovery boundary private. If the browser profile, wallet unlock flow, app origin, or recovery record is compromised, the private-balance boundary can fail even when the contract and proof are correct.
+
+<Info>
+  Waiting longer and avoiding obvious amount, timing, and recipient patterns can reduce avoidable links. It does not create a guarantee.
+</Info>

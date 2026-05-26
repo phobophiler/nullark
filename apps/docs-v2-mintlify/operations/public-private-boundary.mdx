@@ -1,0 +1,44 @@
+---
+title: "Public and private runbook boundary"
+description: "The boundary between public runtime material and private operational material."
+---
+
+Nullark separates public integration guidance from private operator runbooks.
+
+## Public information includes
+
+- contract addresses
+- chain IDs
+- runtime artifact hashes
+- public approval source hash and approval semantics
+- public input order
+- verifier bindings
+- source verification links
+- known limitations
+- relayer endpoint purpose
+- relayer request validation categories
+- public rejection reasons
+- vulnerability reporting instructions
+
+## Private operator material includes
+
+- funding procedures
+- signer custody
+- private keys or secret names
+- owner approval paths
+- deployer identity
+- Cloudflare account state
+- private smoke records
+- incident response contacts
+- relayer disable procedures
+- emergency key rotation
+- fee sweep procedure
+- guarded-user rollout evidence
+
+## Operational reliance
+
+Operational reliance requires private operator evidence. The public surface documents the exact approved runtime binding, but it does not provide funding, signing, relayer-change, guarded-user rollout, or production operation instructions.
+
+## Why the split matters
+
+Contract and artifact transparency helps users and developers verify the public system boundary. Operator runbooks contain controls that can move funds, expose infrastructure, or weaken incident response if published.

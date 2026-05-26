@@ -1,0 +1,117 @@
+{
+  "recordVersion": 1,
+  "status": "draft",
+  "chainId": 6343,
+  "rpcUrl": "https://carrot.megaeth.com/rpc",
+  "environment": "megaeth-testnet",
+  "mainnet4326Blocked": true,
+  "broadcast": false,
+  "deploymentApproved": false,
+  "signingApproved": false,
+  "privateKeysInRepo": false,
+  "realFundsApproved": false,
+  "guardedUsersBlocked": true,
+  "productionPrivacyClaimsBlocked": true,
+  "addressMode": "predicted-create2",
+  "predictedAddressEvidence": {
+    "deployer": "0x0000000000000000000000000000000000000000",
+    "salt": "replace-me",
+    "initCodeHash": "replace-me",
+    "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --rpc-url https://carrot.megaeth.com/rpc",
+    "contracts": [
+      {
+        "label": "privateTransferVerifier",
+        "expectedAddress": "0x0000000000000000000000000000000000000000",
+        "deployer": "0x0000000000000000000000000000000000000000",
+        "salt": "replace-me",
+        "initCodeHash": "replace-me",
+        "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --sig derivePrivateTransferVerifier --rpc-url https://carrot.megaeth.com/rpc"
+      },
+      {
+        "label": "withdrawVerifier",
+        "expectedAddress": "0x0000000000000000000000000000000000000000",
+        "deployer": "0x0000000000000000000000000000000000000000",
+        "salt": "replace-me",
+        "initCodeHash": "replace-me",
+        "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --sig deriveWithdrawVerifier --rpc-url https://carrot.megaeth.com/rpc"
+      },
+      {
+        "label": "verifierAdapter",
+        "expectedAddress": "0x0000000000000000000000000000000000000000",
+        "deployer": "0x0000000000000000000000000000000000000000",
+        "salt": "replace-me",
+        "initCodeHash": "replace-me",
+        "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --sig deriveVerifierAdapter --rpc-url https://carrot.megaeth.com/rpc"
+      },
+      {
+        "label": "shieldedPool",
+        "expectedAddress": "0x0000000000000000000000000000000000000000",
+        "deployer": "0x0000000000000000000000000000000000000000",
+        "salt": "replace-me",
+        "initCodeHash": "replace-me",
+        "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --sig deriveShieldedPool --rpc-url https://carrot.megaeth.com/rpc"
+      },
+      {
+        "label": "poseidon2",
+        "expectedAddress": "0x0000000000000000000000000000000000000000",
+        "deployer": "0x0000000000000000000000000000000000000000",
+        "salt": "replace-me",
+        "initCodeHash": "replace-me",
+        "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --sig derivePoseidon2 --rpc-url https://carrot.megaeth.com/rpc"
+      },
+      {
+        "label": "feeController",
+        "expectedAddress": "0x0000000000000000000000000000000000000000",
+        "deployer": "0x0000000000000000000000000000000000000000",
+        "salt": "replace-me",
+        "initCodeHash": "replace-me",
+        "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --sig deriveFeeController --rpc-url https://carrot.megaeth.com/rpc"
+      },
+      {
+        "label": "emergencyGuardian",
+        "expectedAddress": "0x0000000000000000000000000000000000000000",
+        "deployer": "0x0000000000000000000000000000000000000000",
+        "salt": "replace-me",
+        "initCodeHash": "replace-me",
+        "derivationCommand": "forge script contracts/script/DeriveMegaEthTestnetAddresses.s.sol --sig deriveEmergencyGuardian --rpc-url https://carrot.megaeth.com/rpc"
+      }
+    ]
+  },
+  "addresses": {
+    "privateTransferVerifier": "0x0000000000000000000000000000000000000000",
+    "withdrawVerifier": "0x0000000000000000000000000000000000000000",
+    "verifierAdapter": "0x0000000000000000000000000000000000000000",
+    "shieldedPool": "0x0000000000000000000000000000000000000000",
+    "poseidon2": "0x0000000000000000000000000000000000000000",
+    "feeController": "0x0000000000000000000000000000000000000000",
+    "emergencyGuardian": "0x0000000000000000000000000000000000000000"
+  },
+  "signerPolicy": {
+    "privateKeysInRepo": false,
+    "broadcastDefault": false,
+    "signerDescription": "External signer only after explicit deployment approval; no private keys in repository."
+  },
+  "constructorArgs": {
+    "privateTransferVerifier": [],
+    "withdrawVerifier": [],
+    "verifierAdapter": [
+      "0x0000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000"
+    ],
+    "shieldedPool": [
+      "0x0000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000"
+    ]
+  },
+  "verifierPromotionRecordPath": "docs/evidence/trusted-setup-verifier-promotion.record.json",
+  "trustedSetupRecordPath": "docs/evidence/trusted-setup-verifier-promotion.record.json",
+  "gasEvidencePlanPath": "docs/evidence/megaeth-testnet-gas-plan.json",
+  "slitherReportPath": "docs/slither-analysis.md",
+  "launchReadinessRecordPath": "docs/launch-readiness-record.md",
+  "deploymentDryRunCommand": "forge script contracts/script/DeployMegaEthTestnetNullarkPool.s.sol:DeployMegaEthTestnetNullarkPool --root contracts --rpc-url https://carrot.megaeth.com/rpc",
+  "postDeployReadOnlyCheckCommand": "forge script contracts/script/VerifyMegaEthTestnetNullarkPool.s.sol:VerifyMegaEthTestnetNullarkPool --root contracts --rpc-url https://carrot.megaeth.com/rpc",
+  "constructorArgsRecorded": false,
+  "noMainnetConfigPresent": true
+}

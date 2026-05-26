@@ -1,0 +1,42 @@
+---
+title: "Status and boundaries"
+description: "Current public runtime facts and operator-action boundaries."
+---
+
+The current public runtime record identifies Nullark v1.2 on MegaETH mainnet. `public-artifacts/current.json` contains the exact values.
+
+| Field | Current public value |
+| --- | --- |
+| Network | MegaETH mainnet |
+| Chain ID | `4326` |
+| RPC | `https://mainnet.megaeth.com/rpc` |
+| Product version | `nullark-v1.2-fee-governance` |
+| Pool | `0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8` |
+| Withdrawal selector | `0x678d8506` |
+| Merkle tree depth | `20` |
+| Withdrawal fee | `33` bps |
+| Public relayer endpoint | `https://relayer.nullark.com/transaction` |
+| Value-moving runtime binding | Approved only for the exact pinned v1.2 pool, selector, verifier, endpoint, relayer, and artifact hashes |
+| Guarded-user runtime support | Approved in the public runtime record; rollout evidence remains private |
+| Production privacy status | Disabled in the public runtime record |
+
+## Runtime record
+
+Public runtime fields can be compared against `public-artifacts/current.json`. Approval booleans are scoped by `approvalEvidence` and `approvalSemantics`; they are not standalone production-readiness claims.
+
+## Operator-action boundary
+
+The runtime record approves the exact pinned v1.2 public runtime binding. It is not approval for:
+
+- moving mainnet funds outside the pinned v1.2 runtime binding
+- signing transactions from this checkout
+- funding relayers or operators
+- rolling out guarded-user cohorts without private operator evidence
+- enabling or changing production relayers beyond the pinned endpoint and relayer binding
+- changing fee policy
+- presenting production privacy as enabled
+- treating a checkout as production-ready
+
+<Warning>
+  If private operator evidence is missing, stale, or unavailable, production readiness remains unproven.
+</Warning>

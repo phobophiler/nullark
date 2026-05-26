@@ -1,0 +1,55 @@
+---
+title: "Artifact verification"
+description: "Public runtime, contract, and proving artifact verification before integration."
+---
+
+Artifact verification identifies which Nullark runtime an integration references.
+
+<Steps>
+  <Step title="Read the public runtime record">
+    Use `public-artifacts/current.json` as the machine-readable source of truth.
+  </Step>
+  <Step title="Match the chain and pool">
+    Confirm MegaETH mainnet chain ID `4326` and pool `0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8`.
+  </Step>
+  <Step title="Match verifier bindings">
+    Confirm the deposit verifier, private-transfer verifier, withdrawal verifier, verifier adapter, and Poseidon2 addresses.
+  </Step>
+  <Step title="Match prover artifacts">
+    Confirm the prover manifest hash, trusted setup record hash, withdrawal WASM hash, and withdrawal zkey hash.
+  </Step>
+  <Step title="Match approval evidence">
+    Confirm approval booleans are scoped by `approvalEvidence` and `approvalSemantics`, and that `approvalEvidence.publicApprovalSource.sha256` matches the trusted setup record hash.
+  </Step>
+  <Step title="Match public input order">
+    Confirm the 10-field withdrawal public input order before relying on a proof.
+  </Step>
+</Steps>
+
+## Fail-closed conditions
+
+Stop if:
+
+- chain ID differs
+- pool differs
+- verifier address differs
+- selector differs
+- public input order differs
+- artifact hash differs
+- trusted setup record differs
+- approval evidence source, visibility, or semantics are missing
+- source verification cannot be checked
+- the integration relies on screenshots, private runbooks, or old deployment packets instead of the public artifact record
+
+## What verification does not prove
+
+Public artifact verification does not prove:
+
+- operator key custody
+- relayer funding status
+- live smoke status
+- signer rotation status
+- guarded-user rollout status
+- production privacy status beyond the explicit disabled state in the public runtime record
+
+Those topics are outside public artifact verification.

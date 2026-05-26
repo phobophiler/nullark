@@ -1,0 +1,24 @@
+{
+  "name": "@nullark/web",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nullark/core": "0.0.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "poseidon-lite": "^0.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "viem": "^2.50.4",
+    "vite": "^8.0.10"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^15.0.0",
+    "jsdom": "^24.0.0"
+  }
+}

@@ -1,0 +1,35 @@
+---
+title: "Nullark documentation"
+description: "A security-first guide to Nullark's shielded-balance model, public artifacts, and integration boundaries."
+---
+
+Nullark is a fixed-denomination ETH note system for MegaETH. A user deposits into `NullarkPool`, keeps private note material out of public channels, and later exits to a public recipient with a proof-checked withdrawal.
+
+<Warning>
+  Nullark does not provide anonymous transfers. Deposits, withdrawals, recipients, fixed amounts, timing, commitments, nullifiers, encrypted-note events, and relayer submission metadata can remain observable.
+</Warning>
+
+<CardGroup cols={2}>
+  <Card title="Start with boundaries" icon="shield-check" href="/start/status-and-boundaries">
+    See the current public status, contract addresses, and non-approval boundaries.
+  </Card>
+  <Card title="Review the privacy model" icon="eye-off" href="/protocol/privacy-model">
+    Understand where direct on-chain linkage is reduced and which caveats still matter.
+  </Card>
+  <Card title="Verify artifacts" icon="fingerprint" href="/developers/artifact-verification">
+    Check the pool, verifiers, public input order, trusted setup record, and prover artifact hashes.
+  </Card>
+  <Card title="Review relayer visibility" icon="radio" href="/developers/relayer-integration">
+    Understand relayer metadata, public exits, and request rejection boundaries.
+  </Card>
+</CardGroup>
+
+## Nullark boundaries
+
+Nullark uses fixed-denomination notes and proof-checked withdrawals on MegaETH. Plaintext note material is not posted as public chain data, and withdrawals prove authorization against accepted pool state before exiting to a public recipient.
+
+Nullark does not hide deposits, withdrawals, recipients, fixed amounts, timing, commitments, nullifiers, encrypted-note events, RPC metadata, frontend metadata, relayer metadata, or later wallet behavior.
+
+## Current public source of truth
+
+`public-artifacts/current.json` is the machine-readable runtime record. The human-readable pages repeat contract addresses for review, but the JSON artifact remains the canonical value source.

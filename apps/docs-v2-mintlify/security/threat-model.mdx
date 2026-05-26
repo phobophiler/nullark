@@ -1,0 +1,67 @@
+---
+title: "Threat model"
+description: "Assets, actors, trust boundaries, invariants, and failure modes for Nullark."
+---
+
+## Assets at risk
+
+- ETH held by `NullarkPool`
+- note secrets
+- recovery secrets
+- nullifiers
+- prover artifact identity
+- trusted setup provenance
+- relayer funds and signing authority
+- runtime configuration
+- public privacy statements
+
+## Actors and roles
+
+- depositors
+- withdrawal recipients
+- wallet providers
+- relayers
+- indexers
+- RPC providers
+- frontend operators
+- maintainers
+- reviewers
+- attackers monitoring chain and network metadata
+
+## Trust boundaries
+
+- wallet prompts
+- app origin
+- browser storage
+- local proof generation
+- public artifact record
+- contracts and verifiers
+- relayer endpoint
+- indexer logs
+- private operator runbooks
+
+## Critical invariants
+
+- no unauthorized withdrawal
+- no double spend
+- no inflation
+- no accounting drift that strands user principal
+- no proof accepted for the wrong chain or pool
+- no relayer submission outside the documented chain, pool, selector, and verifier binding
+- no public privacy statement beyond documented evidence
+
+## Failure modes
+
+- compromised frontend
+- note material disclosure
+- reused recipient address
+- timing correlation
+- stale root
+- nullifier replay
+- wrong public input order
+- artifact hash drift
+- verifier mismatch
+- RPC or indexer metadata leakage
+- relayer metadata leakage
+- privileged role misuse
+- unsupported mainnet runtime statement

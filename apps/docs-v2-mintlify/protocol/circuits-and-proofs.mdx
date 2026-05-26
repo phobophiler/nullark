@@ -1,0 +1,65 @@
+---
+title: "Circuits and proofs"
+description: "The public input order, circuit boundaries, and proof-material safety rules."
+---
+
+Nullark's proof system is only meaningful when the circuit, verifier, adapter, public inputs, and browser artifacts are the same stack.
+
+## Withdrawal public input order
+
+The current withdrawal proof uses this public input order:
+
+```text
+root
+nullifier
+outputCommitment
+destination
+grossAmount
+fee
+chainId
+verifyingContract
+proofContextHash
+encryptedOutputNoteHash
+```
+
+The order is part of the security boundary. A proof generated for a stale order, stale circuit, stale verifier, stale pool, or stale chain is not the current Nullark proof stack.
+
+## Bound fields
+
+The public input order binds:
+
+- accepted Merkle root
+- withdrawal nullifier
+- output commitment
+- public destination
+- gross withdrawal amount
+- fee
+- MegaETH chain ID
+- verifying contract context
+- proof context hash
+- encrypted output note hash
+
+## Private proof material
+
+Never publish:
+
+- raw witnesses
+- note secrets
+- recovery secrets
+- private inputs
+- decrypted note payloads
+- proof-generation traces
+- unredacted calldata dumps tied to a user
+
+## Artifact changes
+
+Circuit changes require new artifact bindings:
+
+- circuit source hash
+- public input order
+- verification key hash
+- Solidity verifier bytecode hash
+- deployed verifier address
+- WASM and zkey hashes
+- trusted setup provenance
+- negative tests for public input mutation

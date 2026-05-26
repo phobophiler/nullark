@@ -1,0 +1,17 @@
+# Public Artifacts
+
+Public verification surface for Nullark.
+
+- `current.json` is the stable source of truth for the current public runtime.
+- `proving/` is reserved for prover artifact metadata.
+- `contracts/` is reserved for public contract verification metadata.
+
+Current public runtime status:
+
+- v1.2 is the current production public artifact set for MegaETH mainnet runtime metadata.
+- The current runtime is exactly the pool, verifier, selector, relayer endpoint, and artifact hashes pinned in `current.json`.
+- v1.2 value-moving is enabled for the artifact-bound relayer path recorded in `current.json`.
+- The approval booleans in `current.json` are scoped by `approvalEvidence` and `approvalSemantics`; they rely on the hash-pinned trusted setup record and do not prove private operator evidence from this checkout.
+- `current.json` does not by itself authorize new deployments, signing, funding, key rotation, relayer enablement changes, guarded-user rollout, broader relayer endpoints, production readiness from a local checkout, or production privacy claims.
+
+Do not place operator decision records, funding records, private runbooks, raw witnesses, proof blobs, private keys, note material, or smoke records in this directory.

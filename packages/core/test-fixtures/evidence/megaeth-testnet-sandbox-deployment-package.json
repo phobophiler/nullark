@@ -1,0 +1,143 @@
+{
+  "recordVersion": 1,
+  "status": "approved-for-sandbox-testnet-deploy",
+  "scope": "sandbox-only-local-untrusted",
+  "chainId": 6343,
+  "rpcUrl": "https://carrot.megaeth.com/rpc",
+  "environment": "megaeth-testnet",
+  "mainnet4326Blocked": true,
+  "guardedUsersBlocked": true,
+  "realFundsApproved": false,
+  "productionPrivacyClaimsBlocked": true,
+  "trustedSetupSource": "local-untrusted-development",
+  "localUntrustedArtifactsAcceptedForSandboxOnly": true,
+  "cannotSatisfyVerifierPromotion": true,
+  "cannotSatisfyProductionDeployment": true,
+  "ownerRiskAcceptanceRef": "private-owner-approval-record-not-in-public-repo",
+  "localUntrustedArtifactRecordPath": "docs/evidence/local-untrusted-sandbox-artifacts.json",
+  "signer": {
+    "account": "sandbox-redacted-keystore-account",
+    "address": "0x1111111111111111111111111111111111111111",
+    "keystoreDir": "private-keystore-not-in-public-repo",
+    "envPath": ".env.local",
+    "privateKeysInRepo": false,
+    "rawPrivateKeyStoredInEvidence": false
+  },
+  "funding": {
+    "requiredForDryRunDeployEth": "0.000429632050815918",
+    "currentBalanceWei": "redacted-testnet-fixture-balance",
+    "status": "blocked-awaiting-official-web-faucet",
+    "officialFaucetUrl": "https://testnet.megaeth.com",
+    "faucetNotes": "The MegaETH CLI faucet reached eligibility but its transaction path requires gas from the claimant account. Direct contract calls also require gas. Use the official web faucet to send testnet ETH directly to the deployer address."
+  },
+  "constructorArgs": {
+    "privateTransferVerifier": [],
+    "withdrawVerifier": [],
+    "verifierAdapter": [
+      "0x2222222222222222222222222222222222222222",
+      "0x3333333333333333333333333333333333333333"
+    ],
+    "shieldedPool": [
+      "0x4444444444444444444444444444444444444444",
+      "0x1111111111111111111111111111111111111111",
+      "0x1111111111111111111111111111111111111111",
+      "0x5555555555555555555555555555555555555555"
+    ]
+  },
+  "dryRun": {
+    "status": "passed",
+    "command": "ALLOW_LEGACY_SHIELDED_POOL_TESTNET_SCRIPT=true ALLOW_LOCAL_UNTRUSTED_TESTNET_DEPLOYMENT=true MEGAETH_DEPLOYER_ADDRESS=0x1111111111111111111111111111111111111111 forge script contracts/script/DeployMegaEthTestnet.s.sol:DeployMegaEthTestnet --root contracts --rpc-url https://carrot.megaeth.com/rpc --sender 0x1111111111111111111111111111111111111111",
+    "estimatedGasPriceGwei": "0.002000001",
+    "estimatedGasUsed": "214815918",
+    "estimatedRequiredEth": "0.000429632050815918",
+    "predictedCreateAddressesAtNonceZero": {
+      "privateTransferVerifier": "0x2222222222222222222222222222222222222222",
+      "withdrawVerifier": "0x3333333333333333333333333333333333333333",
+      "verifierAdapter": "0x4444444444444444444444444444444444444444",
+      "poseidon2": "0x5555555555555555555555555555555555555555",
+      "shieldedPool": "0x6666666666666666666666666666666666666666"
+    },
+    "dryRunBroadcastPath": "contracts/broadcast/DeployMegaEthTestnet.s.sol/6343/dry-run/run-latest.json"
+  },
+  "scripts": {
+    "dryRun": "ALLOW_LEGACY_SHIELDED_POOL_TESTNET_SCRIPT=true forge script contracts/script/DeployMegaEthTestnet.s.sol:DeployMegaEthTestnet --root contracts --rpc-url https://carrot.megaeth.com/rpc --sender 0x1111111111111111111111111111111111111111",
+    "broadcast": "ALLOW_LEGACY_SHIELDED_POOL_TESTNET_SCRIPT=true forge script contracts/script/DeployMegaEthTestnet.s.sol:DeployMegaEthTestnet --root contracts --rpc-url https://carrot.megaeth.com/rpc --account sandbox-redacted-keystore-account --broadcast --skip-simulation --gas-limit 500000000",
+    "readOnlyVerify": "ALLOW_LEGACY_SHIELDED_POOL_TESTNET_SCRIPT=true forge script contracts/script/VerifyMegaEthTestnet.s.sol:VerifyMegaEthTestnet --rpc-url https://carrot.megaeth.com/rpc",
+    "beginSandboxTest": "forge script contracts/script/BeginMegaEthSandboxTest.s.sol:BeginMegaEthSandboxTest --root contracts --rpc-url https://carrot.megaeth.com/rpc --account sandbox-redacted-keystore-account --broadcast --skip-simulation --gas-limit 3000000"
+  },
+  "deployedAddresses": {
+    "privateTransferVerifier": "0x2222222222222222222222222222222222222222",
+    "withdrawVerifier": "0x3333333333333333333333333333333333333333",
+    "verifierAdapter": "0x4444444444444444444444444444444444444444",
+    "poseidon2": "0x5555555555555555555555555555555555555555",
+    "shieldedPool": "0x6666666666666666666666666666666666666666"
+  },
+  "deploymentTransactions": [
+    {
+      "contractName": "UntrustedLocalGroth16PrivateTransferVerifier",
+      "contractAddress": "0x2222222222222222222222222222222222222222",
+      "transactionHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+      "status": "0x1",
+      "blockNumber": "0x3e8",
+      "from": "0x1111111111111111111111111111111111111111",
+      "gasUsedHex": "0x1000"
+    },
+    {
+      "contractName": "UntrustedLocalGroth16WithdrawVerifier",
+      "contractAddress": "0x3333333333333333333333333333333333333333",
+      "transactionHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
+      "status": "0x1",
+      "blockNumber": "0x3e9",
+      "from": "0x1111111111111111111111111111111111111111",
+      "gasUsedHex": "0x1000"
+    },
+    {
+      "contractName": "ActionRoutingGroth16Verifier",
+      "contractAddress": "0x4444444444444444444444444444444444444444",
+      "transactionHash": "0x3333333333333333333333333333333333333333333333333333333333333333",
+      "status": "0x1",
+      "blockNumber": "0x3ea",
+      "from": "0x1111111111111111111111111111111111111111",
+      "gasUsedHex": "0x1000"
+    },
+    {
+      "contractName": "Poseidon2",
+      "contractAddress": "0x5555555555555555555555555555555555555555",
+      "transactionHash": "0x4444444444444444444444444444444444444444444444444444444444444444",
+      "status": "0x1",
+      "blockNumber": "0x3eb",
+      "from": "0x1111111111111111111111111111111111111111",
+      "gasUsedHex": "0x1000"
+    },
+    {
+      "contractName": "ShieldedPool",
+      "contractAddress": "0x6666666666666666666666666666666666666666",
+      "transactionHash": "0x5555555555555555555555555555555555555555555555555555555555555555",
+      "status": "0x1",
+      "blockNumber": "0x3ec",
+      "from": "0x1111111111111111111111111111111111111111",
+      "gasUsedHex": "0x1000"
+    }
+  ],
+  "readOnlyVerification": {
+    "status": "passed",
+    "shieldedPool": "0x6666666666666666666666666666666666666666",
+    "initialRoot": "0x7777777777777777777777777777777777777777777777777777777777777777"
+  },
+  "sandboxGasEvidenceReportPath": "docs/evidence/megaeth-testnet-sandbox-gas-evidence.json",
+  "initialTestTransaction": {
+    "type": "deposit",
+    "transactionHash": "0x6666666666666666666666666666666666666666666666666666666666666666",
+    "status": "0x1",
+    "gasUsedHex": "0x5d2fd",
+    "shieldedPool": "0x6666666666666666666666666666666666666666",
+    "depositWei": "10000000000000",
+    "commitment": "0x8888888888888888888888888888888888888888888888888888888888888888",
+    "commitmentRecorded": true,
+    "currentRootAfter": "0x9999999999999999999999999999999999999999999999999999999999999999",
+    "poolBalanceWeiAfter": "10000000000000"
+  },
+  "legacyStatus": "superseded-10-input-shielded-pool",
+  "supersededBy": "docs/evidence/megaeth-testnet-nullark-stage-c-prepared-deployment-package.json",
+  "notes": "This package is historical legacy ShieldedPool sandbox evidence only. It is superseded by the Nullark v1.1 Stage C testnet package and must not be used as current Nullark v1.1 deployment evidence."
+}

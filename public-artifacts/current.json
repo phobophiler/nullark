@@ -1,0 +1,137 @@
+{
+  "schema": "nullark-public-runtime-current-v1",
+  "productVersion": "nullark-v1.2-fee-governance",
+  "runtimeId": "nullark-v1.2-mainnet",
+  "trustedSetupRecordUrl": "https://nullark.com/proving/trusted-setup-record.json",
+  "trustedSetupStatus": "approved-for-mainnet",
+  "currentV1_1Approval": false,
+  "network": "megaeth-mainnet",
+  "chainId": 4326,
+  "mainnet4326Blocked": false,
+  "rpcUrl": "https://mainnet.megaeth.com/rpc",
+  "pool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+  "poolContractName": "NullarkPool",
+  "poolDeploymentBlock": "0x10152dd",
+  "depositVerifier": "0x1c62f992d1B2499f0E4CE3DecD4c0833d3B7C691",
+  "privateTransferVerifier": "0xd61c14635A7951E6E330a75814304656Db7e9ee9",
+  "withdrawVerifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+  "verifierAdapter": "0xc63269E567f4984Cd5d5ED4D27117c589732b186",
+  "poseidon2": "0x962dB28fe5Ae5737FdE62F438309cFFDefE8C182",
+  "feeController": "0x951b8ABC24528Fb2512f813504fbA0bC88638911",
+  "poolRuntimeCodeKeccak": "0xbcacaf0d2e26e58f0affd371e00f6f8b1b1ce2be8f479cd483d850f1c864dee8",
+  "withdrawVerifierBytecodeHash": "0x613190065f23e69c6dcd8d75796b8aa20c060a5f51b312cf82c11424443bfdca",
+  "withdrawSelector": "0x678d8506",
+  "merkleTreeDepth": 20,
+  "withdrawalFeeBps": 33,
+  "maxWithdrawalFeeBps": 100,
+  "feePolicy": {
+    "activeFeeBps": 33,
+    "maxFeeBps": 100,
+    "pendingFeeState": {
+      "pendingFeeBps": null,
+      "pendingFeeActivationTime": null,
+      "source": "on-chain-feeBps"
+    }
+  },
+  "relayerEndpoint": "https://relayer.nullark.com/transaction",
+  "relayerEndpointLabel": "Machine/API endpoint",
+  "productionRelayerApproved": true,
+  "approvedWithdrawalRelayer": "0x8684bCb6D1deCb9b89733E7120625947615Cc14F",
+  "signer": "0x8A27533b403C24a419791431Bc82B450830D410E",
+  "liveSmokeEvidenceApproved": true,
+  "mainnetValueMovingApproved": true,
+  "automatedValueMovementApprovedByThisRecord": true,
+  "privacyClaimsApproved": false,
+  "guardedUsersApproved": true,
+  "approvalEvidence": {
+    "recordPurpose": "Public runtime binding and artifact identity for the exact Nullark v1.2 MegaETH mainnet deployment.",
+    "publicApprovalSource": {
+      "path": "apps/web/public/proving/trusted-setup-record.json",
+      "url": "https://nullark.com/proving/trusted-setup-record.json",
+      "sha256": "b87aa47a407f0347a920fcebe76f84d402be8bd5e82f5fe5980ffea557bfa996",
+      "status": "approved-for-mainnet"
+    },
+    "approvedRuntimeBinding": {
+      "chainId": 4326,
+      "pool": "0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8",
+      "withdrawVerifier": "0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92",
+      "withdrawSelector": "0x678d8506",
+      "relayerEndpoint": "https://relayer.nullark.com/transaction",
+      "approvedWithdrawalRelayer": "0x8684bCb6D1deCb9b89733E7120625947615Cc14F"
+    },
+    "evidenceVisibility": {
+      "trustedSetupRecord": "public-hash-pinned",
+      "operatorEvidence": "private-not-in-public-checkout",
+      "liveSmokeEvidence": "private-not-in-public-checkout",
+      "guardedUserRolloutEvidence": "private-not-in-public-checkout"
+    },
+    "requiresPrivateOperatorEvidenceForOperationalReliance": true,
+    "requiredPrivateEvidence": [
+      "owner approval",
+      "deployment receipts",
+      "relayer Worker deployment and self-test evidence",
+      "funding and smoke evidence",
+      "scoped signing controls",
+      "guarded-user rollout evidence",
+      "incident and recovery stop-condition records"
+    ]
+  },
+  "approvalSemantics": {
+    "publicRecordApproves": [
+      "exact v1.2 runtime binding named in this record",
+      "artifact-bound withdrawal relayer path for the exact pool, selector, verifier, endpoint, and relayer named in this record"
+    ],
+    "publicRecordDoesNotProve": [
+      "operator key custody",
+      "relayer funding status",
+      "live smoke evidence inside this checkout",
+      "guarded-user rollout evidence inside this checkout",
+      "production readiness from a local checkout",
+      "production privacy claims"
+    ]
+  },
+  "remainingBlockers": [],
+  "remainingLimitations": [
+    "Production privacy claims remain disabled unless a later public privacy-claims artifact is published and wired into runtime."
+  ],
+  "explicitNonAuthorizations": [
+    "Does not authorize production privacy claims.",
+    "Does not authorize any runtime binding beyond the published v1.2 pool, verifiers, selector, endpoint, and relayer.",
+    "Does not authorize operator action, signing, funding, key rotation, relayer enablement changes, guarded-user rollout, or production-readiness reliance without private operator evidence."
+  ],
+  "artifacts": {
+    "proverManifestSha256": "1c67bcce6badc3faa7b4963a9fa474eea2072ef0f345237e84364ab1eac23af1",
+    "trustedSetupRecordSha256": "b87aa47a407f0347a920fcebe76f84d402be8bd5e82f5fe5980ffea557bfa996",
+    "depositWasmSha256": "ba7e7ffe60145f50bd390c1dfee5ba9aa6c9c0ce37ee3ec3d48b760fe491c9d8",
+    "depositFinalZkeySha256": "12dea5f2301e7102cbd905fcc5a356b33e01eeb4a3f08159c70830b5a1746389",
+    "privateTransferWasmSha256": "7b73b501c1a69e220b64dd4140c035429f11fee87617b33ffa80f9eab29c0813",
+    "privateTransferFinalZkeySha256": "fd6edd3b5f2196f48fe71d3a1aa405c46ad371f8001a281066ef13f8b71ed916",
+    "withdrawWasmSha256": "b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143",
+    "withdrawFinalZkeySha256": "804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25"
+  },
+  "paths": {
+    "browserProverManifest": "apps/web/public/proving/withdraw-artifacts.manifest.json",
+    "trustedSetupRecord": "apps/web/public/proving/trusted-setup-record.json",
+    "approvedProvingBundle": "public-artifacts/proving/v1.2",
+    "depositWasm": "apps/web/public/proving/deposit.wasm",
+    "depositFinalZkey": "apps/web/public/proving/deposit_final.zkey",
+    "privateTransferWasm": "public-artifacts/proving/v1.2/private_transfer.wasm",
+    "privateTransferFinalZkey": "public-artifacts/proving/v1.2/private_transfer.zkey",
+    "withdrawWasm": "apps/web/public/proving/withdraw.wasm",
+    "withdrawFinalZkey": "apps/web/public/proving/withdraw_final.zkey",
+    "volatileMetadataEvidence": "public-artifacts/evidence/mainnet-readiness/gas/stage-c-deadline-volatile-compute-limit.json"
+  },
+  "groth16PublicInputOrder": [
+    "root",
+    "nullifier",
+    "outputCommitment",
+    "destination",
+    "grossAmount",
+    "fee",
+    "chainId",
+    "verifyingContract",
+    "proofContextHash",
+    "encryptedOutputNoteHash"
+  ],
+  "publicInputOrderHash": "98ae722255351a03402cd3ad1cdf9a65d5ca270f5c11b7ad48322ff0fc77f110"
+}

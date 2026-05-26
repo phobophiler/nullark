@@ -1,0 +1,91 @@
+{
+  "recordVersion": 1,
+  "status": "local-untrusted-sandbox",
+  "purpose": "sandbox-only",
+  "trustedSetupSource": "local-untrusted-development",
+  "chainId": 6343,
+  "mainnet4326Blocked": true,
+  "deploymentApproved": false,
+  "signingApproved": false,
+  "privateKeysIncludedInEvidence": false,
+  "realFundsApproved": false,
+  "guardedUsersBlocked": true,
+  "productionPrivacyClaimsBlocked": true,
+  "cannotSatisfyPromotion": true,
+  "cannotSatisfyDeployment": true,
+  "cannotSatisfyGuardedUsers": true,
+  "localPotLabel": "pot13",
+  "localArtifactRoot": "circuits/build",
+  "artifacts": [
+    {
+      "label": "local-pot13-final-ptau",
+      "path": "circuits/build/groth16/powersoftau/pot13_final.ptau",
+      "hash": "sha256:c7e33282eeb2b0b7e560c26016f448f6cb565d4063dc8143e8c0faec8c25ae2f"
+    },
+    {
+      "label": "private-transfer-local-zkey",
+      "path": "circuits/build/groth16/private_transfer/private_transfer_final.zkey",
+      "hash": "sha256:1b1ad27db0cc8f1a5af43c295129709954652143ec3bb53d168ce14a6f2bbf85"
+    },
+    {
+      "label": "withdraw-local-zkey",
+      "path": "circuits/build/groth16/withdraw/withdraw_final.zkey",
+      "hash": "sha256:86a9f5c3b4833dd38b9bdd21fa5412593572223961568d3ff2862116c6ca2a96"
+    },
+    {
+      "label": "private-transfer-local-verification-key",
+      "path": "circuits/build/groth16/private_transfer/verification_key.json",
+      "hash": "sha256:d0705998f945cd75769994ace19e4ac645f5f7a2c822897d0b9595a4021c0e58"
+    },
+    {
+      "label": "withdraw-local-verification-key",
+      "path": "circuits/build/groth16/withdraw/verification_key.json",
+      "hash": "sha256:20434abffcf17b8a06e87176279cf3f0ca8c173722ca0d359bcc3eec64c2a9bb"
+    },
+    {
+      "label": "private-transfer-local-solidity-verifier",
+      "path": "circuits/build/generated/verifiers/UNTRUSTED_DO_NOT_USE_YET/Groth16PrivateTransferVerifier.sol",
+      "hash": "sha256:a6f5e7ef967f033bb685135ed11dfea50b4087996e6d785007ec40fd087e21b2"
+    },
+    {
+      "label": "withdraw-local-solidity-verifier",
+      "path": "circuits/build/generated/verifiers/UNTRUSTED_DO_NOT_USE_YET/Groth16WithdrawVerifier.sol",
+      "hash": "sha256:98fefa34d5c18b00e6d8be2828375d2f0ada56403e6556b098a942374b4fe81f"
+    },
+    {
+      "label": "private-transfer-r1cs",
+      "path": "circuits/build/private_transfer/private_transfer.r1cs",
+      "hash": "sha256:111a3fac5ebbbcee660b46707cf160c7eaf95758356ecbba24a382a2304eb706"
+    },
+    {
+      "label": "private-transfer-wasm",
+      "path": "circuits/build/private_transfer/private_transfer_js/private_transfer.wasm",
+      "hash": "sha256:d4ec4509034dd7ae91b1550925b36d7c2d8092354752ea409f97dc2bf0143b6b"
+    },
+    {
+      "label": "withdraw-r1cs",
+      "path": "circuits/build/withdraw/withdraw.r1cs",
+      "hash": "sha256:fbf8f8a6dc647084fec5fc438f502ae880884d9089ba03d9c0b0cc9a010e6b10"
+    },
+    {
+      "label": "withdraw-wasm",
+      "path": "circuits/build/withdraw/withdraw_js/withdraw.wasm",
+      "hash": "sha256:10da6305ea99967b6945f968b2df93c839f5a8d78221baff800250474b207dc2"
+    },
+    {
+      "label": "provenance-manifest",
+      "path": "circuits/build/provenance/manifest.json",
+      "hash": "sha256:5287358f8cca874fcbac7b1760d3cd74a010275dd16c322f085750e3c09d11ed"
+    }
+  ],
+  "credential": {
+    "envPath": ".env.local",
+    "keystoreAccount": "sandbox-redacted-keystore-account",
+    "publicAddress": "0x1111111111111111111111111111111111111111",
+    "keystorePasswordStoredInGitignoredEnv": true,
+    "rawPrivateKeyStored": false,
+    "privateKeyPrinted": false,
+    "envFileMode": "0600"
+  },
+  "notes": "Local untrusted sandbox evidence only. The local pot13 and development zkeys are UNTRUSTED_LOCAL_DEVELOPMENT_ONLY and productionUsable=false. This record cannot satisfy verifier promotion, deployment, guarded users, real funds, mainnet, or production privacy gates."
+}

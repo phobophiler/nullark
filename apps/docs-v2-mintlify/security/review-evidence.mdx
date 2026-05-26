@@ -1,0 +1,41 @@
+---
+title: "Runtime evidence"
+description: "Public evidence fields for runtime and artifact review."
+---
+
+Runtime and artifact review uses these public evidence fields.
+
+<Warning>
+  The public runtime record can approve the exact pinned v1.2 binding. It is not a deployment, signing, funding, relayer-change, guarded-user rollout, or local-checkout production-readiness approval.
+</Warning>
+
+## Minimum public evidence
+
+Runtime review uses:
+
+- current `public-artifacts/current.json` exists and names the surface
+- chain ID is `4326`
+- contract addresses match the public artifact record
+- selector matches the public artifact record
+- source verification path is documented or linked
+- runtime code hash or verifier bytecode hash is documented where relevant
+- prover manifest hash is documented
+- trusted setup record hash is documented
+- approval evidence source, visibility, and semantics are documented
+- public input order is documented
+- known limitations are linked
+
+## Security evidence
+
+Security review tracks:
+
+- public input mutation tests
+- nullifier double-spend tests
+- root expiry behavior
+- fee-bound checks
+- relayer rejection tests
+- artifact hash verification
+- source verification
+- dependency audit status
+- no-secret scan
+- private operator evidence boundary

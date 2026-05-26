@@ -1,0 +1,30 @@
+{
+  "schema": "nullark-public-megaeth-volatile-metadata-evidence-v1",
+  "chainId": 4326,
+  "rpcUrl": "https://mainnet.megaeth.com/rpc",
+  "status": "reviewed-accepted",
+  "volatileField": "block.timestamp",
+  "computeGasCap": "20000000",
+  "reviewedPaths": [
+    {
+      "path": "fee-governance-timelock",
+      "contract": "contracts/src/v1_2/NullarkPool.sol",
+      "selectors": ["setFeeBps(uint16)", "executePendingFeeBps()"],
+      "assessment": "Low-compute governance paths read block.timestamp before bounded storage updates; no Groth16 verification or unbounded loop is in the timestamp-capped frame."
+    },
+    {
+      "path": "deadline-enabled-relayer-policy-overloads",
+      "contract": "contracts/src/v1_2/NullarkPool.sol",
+      "selectors": [
+        "withdraw(bytes,bytes32[],bytes32,address,uint256,(address,uint256,uint256,uint256))",
+        "withdraw(bytes,bytes32[],bytes32,address,uint256,bytes,(address,uint256,uint256,uint256))",
+        "privateTransfer(bytes,bytes32[],bytes32,bytes32,bytes,(address,uint256,uint256,uint256))"
+      ],
+      "assessment": "These overloads can read block.timestamp when deadlineOrZero is nonzero. The current public mainnet relayer selector is 0x678d8506 and constructs deadlineOrZero=0, so this timestamp path is not used by the approved production relayer binding."
+    }
+  ],
+  "acceptedLimitations": [
+    "This is a static public review artifact, not a mainnet execution trace.",
+    "Deadline-enabled overloads remain constrained by MegaETH volatile metadata compute cap and require separate remote gas evidence before relayer promotion."
+  ]
+}

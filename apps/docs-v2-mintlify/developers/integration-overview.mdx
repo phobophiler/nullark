@@ -1,0 +1,46 @@
+---
+title: "Integration overview"
+description: "Developer integration boundaries for deposits, indexing, proof generation, and public exits."
+---
+
+Integrations are fail-closed. If the public runtime record does not match the values expected by the integration, stop.
+
+## Required runtime checks
+
+Read `public-artifacts/current.json` and verify:
+
+- `chainId`
+- `pool`
+- verifier addresses
+- verifier adapter
+- Poseidon2 address
+- withdrawal selector
+- Merkle depth
+- withdrawal fee policy
+- prover artifact hashes
+- trusted setup record hash
+- public input order
+
+## Deposit integration
+
+Deposit integrations must not send private note material to a backend unless a separate, explicit custody and threat model exists. Nullark's public integration boundary is local note generation and local proof handling.
+
+## Indexing integration
+
+Indexers can reconstruct public roots and encrypted-note events. They must not log decrypted note data, wallet unlock signatures, raw witnesses, or private recovery payloads.
+
+## Withdrawal integration
+
+Withdrawal integrations must bind the proof to the current chain ID, pool, verifier context, destination, amount, fee, nullifier, and encrypted output note hash.
+
+## Integration evidence
+
+Mainnet integrations depend on:
+
+- current public artifact record
+- source verification
+- artifact hash verification
+- public input mutation tests
+- relayer rejection tests
+- known limitations
+- private operator evidence boundary

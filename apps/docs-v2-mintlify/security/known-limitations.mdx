@@ -1,0 +1,49 @@
+---
+title: "Known limitations"
+description: "Risk disclosures and unsupported guarantees for the public Nullark surface."
+---
+
+Nullark limitations are part of the public security boundary.
+
+## Privacy limitations
+
+Nullark does not provide:
+
+- anonymity
+- unlinkability
+- sender privacy
+- receiver privacy
+- amount privacy
+- MEV protection
+- chain-level transaction privacy
+- protection from compromised frontends
+- protection from RPC or indexer metadata analysis
+- protection from user self-linking behavior
+
+## Operational limitations
+
+The public surface does not establish:
+
+- operator key custody
+- live relayer funding
+- signer rotation status
+- incident-response readiness
+- private smoke evidence
+- guarded-user rollout state
+- production readiness
+
+## User limitations
+
+Users can self-link by:
+
+- depositing and withdrawing close together
+- withdrawing to a known wallet
+- reusing recipients
+- sharing screenshots
+- using a fake or compromised frontend
+- exposing note material
+- using revealing post-withdrawal wallet behavior
+
+## Privacy boundary
+
+Nullark reduces direct on-chain linkage only under the documented assumptions. Public chain data, metadata, recipient choices, and user behavior can still link activity. Nullark does not provide anonymous transfers.

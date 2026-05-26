@@ -1,0 +1,37 @@
+---
+title: "Architecture"
+description: "How Nullark separates the pool, proof system, frontend, indexer, SDK, and relayer boundaries."
+---
+
+Nullark has five public-facing layers. Each layer has a different trust boundary.
+
+## System layers
+
+| Layer | Role | Boundary |
+| --- | --- | --- |
+| Pool contract | Stores commitments, tracks nullifiers, verifies proof-adapter results, releases public exits | Cannot protect users from timing, recipient, RPC, frontend, or relayer metadata |
+| Circuits and verifiers | Bind note authorization and public withdrawal fields | Only valid for the published public input order and artifact hashes |
+| Browser app | Handles wallet prompts, note material, recovery flow, and proving UX | A compromised origin can expose sensitive material |
+| Indexer and recovery helpers | Read public events and help reconstruct recoverable private-balance state | Must not log decrypted notes or raw secrets |
+| Relayer endpoint | Accepts bounded withdrawal submission requests | Not a privacy guarantee and not a recovery channel |
+
+## Flow summary
+
+<Steps>
+  <Step title="Deposit">
+    The user deposits a fixed denomination into the pool. The app creates note material locally and records encrypted-note event data.
+  </Step>
+  <Step title="Track pool state">
+    The frontend or indexer reconstructs accepted roots from public events. Root freshness matters because old roots can expire after later insertions.
+  </Step>
+  <Step title="Prove spend authorization">
+    The browser prover uses the published WASM and zkey to produce a withdrawal proof. Raw witness inputs remain private.
+  </Step>
+  <Step title="Exit publicly">
+    The withdrawal sends funds to a public MegaETH recipient. The recipient, amount, fee, nullifier, and timing are public.
+  </Step>
+</Steps>
+
+## Fail-closed boundary
+
+If the chain ID, pool address, verifier address, public input order, artifact hashes, or trusted setup record do not match the public artifact record, the integration stops instead of guessing.

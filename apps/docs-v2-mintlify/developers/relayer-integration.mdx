@@ -1,0 +1,63 @@
+---
+title: "Relayer integration"
+description: "Public integration guidance for the Nullark relayer endpoint and its metadata limits."
+---
+
+The runtime record names this public relayer endpoint:
+
+```text
+https://relayer.nullark.com/transaction
+```
+
+Treat it as a machine/API endpoint. Do not paste note material, recovery secrets, or support messages into it.
+
+## Public request boundary
+
+Relayer requests are bounded by:
+
+- endpoint purpose
+- supported chain ID
+- supported pool
+- supported selector
+- request validation categories
+- deadline behavior
+- idempotency expectations
+- public metadata the relayer can observe
+- rejection reasons
+
+## Operational details
+
+Operational details remain private:
+
+- private keys
+- signer custody details
+- funding policies
+- emergency funding procedures
+- private Cloudflare state
+- owner approval paths
+- live smoke records
+- bypass procedures
+- operational secrets
+
+## Metadata visible to the relayer
+
+The relayer can learn request timing, network metadata, destination, gross amount, fee, nullifier, selector, pool target, and calldata shape. It can also observe repeated attempts and conflicting requests.
+
+<Warning>
+  Relayer use is not an anonymity guarantee. Relayer submission still leaves the public exit visible.
+</Warning>
+
+## Common rejection categories
+
+Relayer requests can be rejected for:
+
+- wrong chain
+- wrong pool
+- unsupported selector
+- stale deadline
+- zero destination
+- fee mismatch
+- public input mismatch
+- already-spent nullifier
+- artifact or verifier mismatch
+- request conflict for the same nullifier

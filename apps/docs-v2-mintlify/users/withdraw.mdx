@@ -1,0 +1,43 @@
+---
+title: "Withdraw"
+description: "How public exits work and the required checks before requesting a withdrawal."
+---
+
+A withdrawal exits to a public MegaETH recipient. The recipient, amount, fee, timing, nullifier, and relayer request metadata can be observed.
+
+## Before withdrawing
+
+Check:
+
+- the destination address is correct
+- the destination is not a reused or identifying address unless that is intentional
+- the chain ID is `4326`
+- the pool and withdrawal verifier match `public-artifacts/current.json`
+- the withdrawal selector is `0x678d8506`
+- the fee is within the documented public policy
+- the proof uses the current artifact hashes
+
+<Warning>
+  Withdrawing to a known wallet can link the private balance to that wallet. Relayer submission does not hide the recipient.
+</Warning>
+
+## Relayer-only submission
+
+The current public UI uses the pinned relayer endpoint for withdrawal submission. It does not expose a direct wallet transaction submission fallback in the production withdrawal flow.
+
+Relayer submission still produces a public withdrawal to the selected recipient. Treat the relayer request as value-moving: verify the chain, pool, selector, verifier, fee, destination, artifact hashes, and deadline before retrying.
+
+## Failure cases
+
+Common failure causes:
+
+- stale Merkle root
+- already-spent nullifier
+- wrong chain ID
+- wrong pool
+- wrong verifier or public input order
+- mismatched artifact hashes
+- unsupported selector
+- stale relayer request deadline
+
+If any value is unclear, stop and verify rather than retrying blindly.

@@ -1,0 +1,41 @@
+{
+  "recordVersion": 1,
+  "status": "template",
+  "purpose": "sandbox-only",
+  "trustedSetupSource": "local-untrusted-development",
+  "chainId": 6343,
+  "mainnet4326Blocked": true,
+  "deploymentApproved": false,
+  "signingApproved": false,
+  "privateKeysIncludedInEvidence": false,
+  "realFundsApproved": false,
+  "guardedUsersBlocked": true,
+  "productionPrivacyClaimsBlocked": true,
+  "cannotSatisfyPromotion": true,
+  "cannotSatisfyDeployment": true,
+  "cannotSatisfyGuardedUsers": true,
+  "localPotLabel": "pot13",
+  "localArtifactRoot": "circuits/build/local-untrusted-pot13",
+  "artifacts": [
+    {
+      "label": "private-transfer-local-zkey",
+      "path": "circuits/build/local-untrusted-pot13/private_transfer.zkey",
+      "hash": "replace-me"
+    },
+    {
+      "label": "withdraw-local-zkey",
+      "path": "circuits/build/local-untrusted-pot13/withdraw.zkey",
+      "hash": "replace-me"
+    }
+  ],
+  "credential": {
+    "envPath": ".env.local",
+    "keystoreAccount": "sandbox-redacted-keystore-account",
+    "publicAddress": "0x1111111111111111111111111111111111111111",
+    "keystorePasswordStoredInGitignoredEnv": true,
+    "rawPrivateKeyStored": false,
+    "privateKeyPrinted": false,
+    "envFileMode": "0600"
+  },
+  "notes": "Local untrusted sandbox evidence only. This record cannot satisfy verifier promotion, deployment, guarded users, real funds, mainnet, or production privacy gates."
+}

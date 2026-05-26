@@ -1,0 +1,49 @@
+---
+title: "What is public"
+description: "The public chain data, event data, and metadata visible across the Nullark flow."
+---
+
+Nullark is not a chain-level privacy layer. Public chain observers, RPC providers, indexers, relayers, and frontends can learn different parts of the flow.
+
+## Public chain and event data
+
+Assume these are public:
+
+- deposits
+- withdrawals
+- recipient addresses
+- fixed denominations and withdrawal amounts
+- fee values
+- timing
+- pool interaction
+- commitments
+- roots
+- nullifiers
+- encrypted-note event bytes
+- relayer submission metadata
+
+## Sensitive data that must stay private
+
+Do not put these in public issues, support requests, screenshots, logs, docs, or chat:
+
+- seed phrases
+- private keys
+- raw note secrets
+- recovery secrets
+- wallet unlock signatures
+- raw witnesses
+- proof-generation inputs
+- decrypted note payloads
+- unredacted local storage records
+
+## Relayer visibility
+
+The relayer endpoint is public integration infrastructure. It can see request timing, network metadata, calldata shape, destination, gross amount, fee, nullifier, selector, and pool target.
+
+<Info>
+  Relayer submission changes who submits a transaction. It does not hide the public recipient, amount, nullifier, or timing.
+</Info>
+
+## Frontend and RPC visibility
+
+A compromised frontend, malicious mirror, unsafe RPC, or browser profile with exposed local storage can break the user's privacy boundary. The cryptographic proof alone does not protect against these off-chain risks.

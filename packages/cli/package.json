@@ -1,0 +1,21 @@
+{
+  "name": "@nullark/cli",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "nullark": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "npm --workspace @nullark/sdk run build && tsc -p tsconfig.build.json",
+    "test": "npm --workspace @nullark/sdk run build && vitest run",
+    "typecheck": "npm --workspace @nullark/sdk run build && tsc --noEmit"
+  },
+  "dependencies": {
+    "@nullark/sdk": "0.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.5"
+  }
+}

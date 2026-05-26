@@ -1,0 +1,33 @@
+---
+title: "Recovery and note safety"
+description: "Recovery boundaries without exposing secrets or implying custody."
+---
+
+Nullark recovery is a local-user safety boundary, not a custody or support recovery service.
+
+## What users must protect
+
+Protect:
+
+- wallet access
+- note secrets
+- recovery secrets
+- browser profile data
+- decrypted note material
+- wallet unlock signatures
+
+## What support cannot receive
+
+Support, docs, and public issues cannot receive:
+
+- seed phrases
+- private keys
+- raw note secrets
+- recovery secrets
+- raw witnesses
+- decrypted note payloads
+- unredacted screenshots containing wallet prompts or recovery material
+
+## Support boundary
+
+Support can help verify public runtime fields, contract addresses, artifact hashes, and visible error categories. Support cannot receive or reconstruct private note material.

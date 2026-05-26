@@ -1,0 +1,25 @@
+{
+  "name": "circuits",
+  "version": "1.0.0",
+  "description": "Compile and witness checks for shielded balance transfer Circom circuits.",
+  "main": "index.js",
+  "scripts": {
+    "compile:deposit:v1.2": "mkdir -p build/deposit_v1_2 && circom deposit_v1_2.circom --r1cs --wasm --sym --inspect -l ./node_modules/circomlib/circuits -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -o build/deposit_v1_2",
+    "compile:private": "mkdir -p build/private_transfer && circom private_transfer.circom --r1cs --wasm --sym --inspect -l ./node_modules/circomlib/circuits -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -o build/private_transfer",
+    "compile:private:v1.2": "mkdir -p build/private_transfer_v1_2 && circom private_transfer_v1_2.circom --r1cs --wasm --sym --inspect -l ./node_modules/circomlib/circuits -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -o build/private_transfer_v1_2",
+    "compile:withdraw": "mkdir -p build/withdraw && circom withdraw.circom --r1cs --wasm --sym --inspect -l ./node_modules/circomlib/circuits -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -o build/withdraw",
+    "compile:withdraw:v1.2": "mkdir -p build/withdraw_v1_2 && circom withdraw_v1_2.circom --r1cs --wasm --sym --inspect -l ./node_modules/circomlib/circuits -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -o build/withdraw_v1_2",
+    "compile": "npm run compile:deposit:v1.2 && npm run compile:private && npm run compile:private:v1.2 && npm run compile:withdraw && npm run compile:withdraw:v1.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "overrides": {
+    "underscore": "1.13.8"
+  },
+  "devDependencies": {
+    "@zk-kit/binary-merkle-root.circom": "2.0.0",
+    "circomlib": "2.0.5",
+    "snarkjs": "0.7.5"
+  }
+}

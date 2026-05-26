@@ -1,0 +1,84 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "linden",
+  "name": "Nullark",
+  "colors": {
+    "primary": "#07110E",
+    "light": "#F6F8F5",
+    "dark": "#050807"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/assets/nullark-wordmark-light.svg",
+    "dark": "/assets/nullark-wordmark-dark.svg"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Geologica",
+      "weight": 500
+    },
+    "body": {
+      "family": "Geologica",
+      "weight": 400
+    }
+  },
+  "seo": {
+    "metatags": {
+      "og:image": "/assets/social/03-nullark-og-image-1200x630.svg",
+      "twitter:card": "summary_large_image",
+      "twitter:image": "/assets/social/02-nullark-x-cover-1500x500.svg"
+    }
+  },
+  "navigation": {
+    "directory": "accordion",
+    "groups": [
+      {
+        "group": "Start",
+        "pages": [
+          "index",
+          "start/status-and-boundaries",
+          "start/what-is-public"
+        ]
+      },
+      {
+        "group": "Protocol",
+        "pages": [
+          "protocol/privacy-model",
+          "protocol/architecture",
+          "protocol/contracts-and-artifacts",
+          "protocol/circuits-and-proofs"
+        ]
+      },
+      {
+        "group": "Users",
+        "pages": [
+          "users/deposit",
+          "users/withdraw",
+          "users/recovery-and-note-safety"
+        ]
+      },
+      {
+        "group": "Developers",
+        "pages": [
+          "developers/integration-overview",
+          "developers/artifact-verification",
+          "developers/relayer-integration"
+        ]
+      },
+      {
+        "group": "Security",
+        "pages": [
+          "security/threat-model",
+          "security/known-limitations",
+          "security/review-evidence"
+        ]
+      },
+      {
+        "group": "Operations Boundary",
+        "pages": [
+          "operations/public-private-boundary"
+        ]
+      }
+    ]
+  }
+}

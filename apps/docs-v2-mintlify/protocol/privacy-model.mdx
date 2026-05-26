@@ -1,0 +1,53 @@
+---
+title: "Privacy model"
+description: "Nullark privacy boundaries, visible data, and caveats."
+---
+
+Nullark's privacy boundary is narrow and evidence-bound:
+
+<Info>
+  Plaintext note material is not posted as public chain data, and a withdrawal must prove authorization against accepted pool state. The surrounding transactions, metadata, and recipient choices remain public or observable.
+</Info>
+
+This boundary does not provide anonymous transfers or private-payment guarantees.
+
+## What the proof protects
+
+The proof path is meant to protect spend authorization:
+
+- the spender knows valid private note material
+- the note belongs to an accepted Merkle root
+- the nullifier has not already been used
+- the destination, amount, fee, chain ID, verifying contract, proof context, and encrypted output note hash are bound to the public input order
+
+## What the proof does not hide
+
+The proof does not hide:
+
+- deposit timing
+- withdrawal timing
+- destination address
+- fixed denomination
+- public fee
+- nullifier
+- relayer request metadata
+- frontend or RPC access metadata
+- later wallet behavior after withdrawal
+
+## Privacy caveats
+
+Privacy can degrade when:
+
+- the anonymity set is small
+- deposit and withdrawal timing are close
+- the recipient is a known address
+- the same recipient is reused
+- a user shares note or recovery material
+- a frontend or browser profile is compromised
+- RPC or indexer traffic is correlated
+- relayer requests expose network metadata
+- operator controls or artifacts are not independently verified
+
+## Unsupported guarantees
+
+Nullark does not provide anonymity, unlinkability, receiver privacy, amount privacy, MEV protection, production-ready privacy, or trustless privacy.

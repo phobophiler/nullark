@@ -1,0 +1,39 @@
+---
+title: "Contracts and artifacts"
+description: "Current public contract addresses, verifier bindings, and artifact hashes for human review."
+---
+
+These public addresses are repeated for human review. `public-artifacts/current.json` is the source of truth.
+
+## Contracts
+
+| Component | Address |
+| --- | --- |
+| `NullarkPool` | `0x08bA57aA9Bc13Ccaf0dda0Fb7Cd7A2570b0FE4d8` |
+| Deposit verifier | `0x1c62f992d1B2499f0E4CE3DecD4c0833d3B7C691` |
+| Private-transfer verifier | `0xd61c14635A7951E6E330a75814304656Db7e9ee9` |
+| Withdraw verifier | `0x608631548f3ab9da82B5C9a2c4Fb3d76Ef8beE92` |
+| Verifier adapter | `0xc63269E567f4984Cd5d5ED4D27117c589732b186` |
+| Poseidon2 | `0x962dB28fe5Ae5737FdE62F438309cFFDefE8C182` |
+| Fee controller | `0x951b8ABC24528Fb2512f813504fbA0bC88638911` |
+
+## Runtime hashes
+
+| Field | Value |
+| --- | --- |
+| Pool runtime code keccak | `0xbcacaf0d2e26e58f0affd371e00f6f8b1b1ce2be8f479cd483d850f1c864dee8` |
+| Withdrawal verifier bytecode hash | `0x613190065f23e69c6dcd8d75796b8aa20c060a5f51b312cf82c11424443bfdca` |
+| Public input order hash | `98ae722255351a03402cd3ad1cdf9a65d5ca270f5c11b7ad48322ff0fc77f110` |
+| Prover manifest SHA-256 | `1c67bcce6badc3faa7b4963a9fa474eea2072ef0f345237e84364ab1eac23af1` |
+| Trusted setup record SHA-256 | `b87aa47a407f0347a920fcebe76f84d402be8bd5e82f5fe5980ffea557bfa996` |
+| `withdraw.wasm` SHA-256 | `b97120c59c4d4874ae8c66721327d32a9fa91a07b228e75035d38344c8d17143` |
+| `withdraw_final.zkey` SHA-256 | `804da480e694aa081ee14ed69557e6042b48ec305a90678c2b7f2162a1f0da25` |
+
+## Admin and upgrade boundaries
+
+The current artifact boundary is:
+
+- The pool is not described here as a proxy.
+- The fee controller is a privileged role.
+- Future upgradeability would require storage-layout documentation, upgrade authority review, and a separate threat model.
+- Operator key custody, funding, signer rotation, and private approvals are outside this public artifact boundary.

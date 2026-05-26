@@ -1,0 +1,18 @@
+<svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
+  <defs>
+    <linearGradient id="ink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06110D"/>
+      <stop offset="58%" stop-color="#111A16"/>
+      <stop offset="100%" stop-color="#32413A"/>
+    </linearGradient>
+    <filter id="typeShadow" x="-10%" y="-40%" width="120%" height="180%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#FFFFFF" flood-opacity="0.55"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="0.8" flood-color="#000000" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600&amp;display=swap');
+      .wordmark { font-family: 'Geologica', Arial, Helvetica, sans-serif; font-weight: 500; fill: url(#ink); letter-spacing: 2px; filter: url(#typeShadow); }
+    </style>
+  </defs>
+  <text x="0" y="26" class="wordmark" font-size="30" textLength="148" lengthAdjust="spacing">nullark</text>
+</svg>
